@@ -1,10 +1,10 @@
  > As you complete each section you **must** remove the prompt text. Every *turnin* of this project includes points for formatting of this README so keep it clean and keep it up to date. 
  > Prompt text is any lines beginning with "\>"
  > Replace anything between \<...\> with your project specifics and remove angle brackets. For example, you need to name your project and replace the header right below this line with that title (no angle brackets). 
-# \<Project title\>
+# The Arena: RPG Battle Game
  > Your author list below should include links to all members GitHub (remove existing author).
  
- > Authors: \<[Jeffrey McDaniel](https://github.com/jmcda001)\>
+ > Authors: [Westin Montano](github.com/westinm01), [Muneeb Ghori](github.com/muneebghori), [Briana McGhee](github.com/bmcghee98)
  
  > You will be forming a group of **THREE** students and working on an interesting project. A list of proposed project ideas that have been successful in previous quarters is given in the project specifications link on iLearn. You can select an idea from the list and decide which design patterns you will use to implement it. If you want to propose your own original idea, you will have to contact an instructor to discuss the project and obtain written permission before you submit your project proposal. Your project needs to implement two design patterns.The project work should be divided almost equally among team members and each member is expected to work on at least one design pattern (more than one partner may work on a pattern) and some of its test cases. You can of course help each other, but it needs to be clear who will be responsible for which patterns and for which features.
  
@@ -19,10 +19,20 @@
 
 ## Project Description
  > Your project description should summarize the project you are proposing. Be sure to include
+ 
  > * Why is it important or interesting to you?
+ 
+ > We decided to create an RPG game not only because it would be a fun experience, but it would also give us the space to play around with and incorporate some of the concepts which we have been learning during the course of this class.
+ 
  > * What languages/tools/technologies do you plan to use? (This list may change over the course of the project)
  >   * [toolname](link) - Short description
+ 
+ > This project will be written in C++, and will include a database system for generating enemy types, characters, weapons, and abilities.
+ 
  > * What will be the input/output of your project?
+ 
+ > This will be a turn-based RPG-style game where the player is given a prompt and is tasked with deciding what to do next within the battle. Depending on what the player decides to do, the game will react accordingly to their decision until either the player or enemy has been defeated.
+ 
  > * What are the two design patterns you will be using? For each design pattern you must explain in 4-5 sentences:
  >   * Why you picked this pattern and what feature you will implement with it
  >   * What problem you anticipate encountering when implementing your project that you will solve using the design pattern
