@@ -28,16 +28,6 @@
 > 
 > The Decorator pattern will be used in determining a character's stats that would be dependent on a fighting style interface, what weapon they wield, their ability, etc. These factors will be implemented into their own respective classes that in the end, make up a player's stats. The fighting style interface will depend on the character you select. We believe that a potential problem could be handling too much at once. For Decorator pattern, we may need to implement one for each stat rather than all stats together. As mentioned earlier, these patterns will work well with the ideas we stated, and this is going off of mainly our own research. We are also anticipating creating characters (with a total of 7-8 playable characters, and randomly-generated enemies) using Strategy pattern as well.
 
- > ## Phase II
- > In addition to completing the "Class Diagram" section below, you will need to 
- > * Set up your GitHub project board as a Kanban board for the project. It should have columns that map roughly to 
- >   * Backlog, TODO, In progress, In testing, Done
- >   * You can change these or add more if you'd like, but we should be able to identify at least these.
- > * There is no requirement for automation in the project board but feel free to explore those options.
- > * Create an "Epic" (note) for each feature and each design pattern and assign them to the appropriate team member. Place these in the `Backlog` column
- > * Complete your first *sprint planning* meeting to plan out the next 7 days of work.
- >   * Create smaller development tasks as issues and assign them to team members. Place these in the `Backlog` column.
- >   * These cards should represent roughly 7 days worth of development time for your team, taking you until your first meeting with the TA
 ## Class Diagram
  >  Class Diagram link: https://drive.google.com/file/d/1LAjs0aT9K9u4edpp5Ky5dcDy5Ojwzrsj/view?usp=sharing
  > Description: There will be a `Character` class, that is decorated with an ability depending on the character, as well as equippable items that alter the `Character`'s stats or affect gameplay. A `Character` has 4 `Attack`s, and these attacks fall into 1 of 3 categories as outlined in the UML. Each attack has a specific funciton, and we found that Strategy Pattern allows us to section off different types of attacks while giving them their unique behavior. There are several states that the game exists in, which are listed out in all available `Menu` classes. `Menu`s can definitely contain other menus, and allow ease of navigation from one menu to another `Menu`. We implemented Strategy Pattern here because all `Menu`s can display, but they all display differently and often with different content. The `Battle` class exists to store data that may trigger abilities in addition to being the flow of gameplay itself.
