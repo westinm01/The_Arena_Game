@@ -10,24 +10,23 @@
 ## Project Description
 
  
- >  **Why is it important or interesting to you?**
+   **Why is it important or interesting to you?**
  
  > We decided to create an RPG game not only because it would be a fun experience, but it would also give us the space to play around with and incorporate some of the concepts that we have been learning during the course of this class.
  
- >  **What languages/tools/technologies do you plan to use? (This list may change over the course of the project)**
+   **What languages/tools/technologies do you plan to use? (This list may change over the course of the project)**
   
  > This project will be written in C++, and will include a database system for generating enemy types, characters, weapons, and abilities.
  
- > **What will be the input/output of your project?**
+  **What will be the input/output of your project?**
  
  > This will be a turn-based RPG-style game where the player is given a prompt and is tasked with deciding what to do next within the battle. Depending on what the player decides to do, the game will react accordingly to their decision until either the player or enemy has been defeated.
  
- > **What are the two design patterns you will be using? For each design pattern you must explain in 4-5 sentences:
- >   Why you picked this pattern and what feature you will implement with it
- >   What problem you anticipate encountering when implementing your project that you will solve using the design pattern
- >   Why the chosen design pattern will lead to a good solution to that problem**
+  **What are the two design patterns you will be using?**
  
-> We chose to implement Strategy pattern and Decorator pattern. We believe that Strategy pattern will be extremely viable when creating functions for a character's passive ability because each ability will take different inputs (health, defense, attack, opponent stats, etc) to perform its unique function, while all abilities work as a passive trait derived from the Ability class. The Strategy pattern will start with a base class of Ability, that is derived by a dozen ability classes. Each ability classes are unique to a specific ability, and they override Ability class' signature functions: trigger and perform. Each ability is triggered, but triggered differently based on input. Each ability also has a performing funcion, but the parameters and result of the functions differ for each ability. The Decorator pattern will be used in determining a character's stats that would be dependent on a fighting style interface, what weapon they wield, their ability, etc. These factors will be implemented into their own respective classes that in the end, make up a player's stats. The fighting style interface will depend on the character you select. We believe that a potential problem could be handling too much at once. For Decorator pattern, we may need to implement one for each stat rather than all stats together. As mentioned earlier, these patterns will work well with the ideas we stated, and this is going off of mainly our own research. We are also anticipating creating characters (with a total of 7-8 playable characters, and randomly-generated enemies) using Strategy pattern as well.
+> We chose to implement Strategy pattern and Decorator pattern. We believe that Strategy pattern will be extremely viable when creating functions for a character's passive ability because each ability will take different inputs (health, defense, attack, opponent stats, etc) to perform its unique function, while all abilities work as a passive trait derived from the Ability class. The Strategy pattern will start with a base class of Ability, that is derived by a dozen ability classes. Each ability classes are unique to a specific ability, and they override Ability class' signature functions: trigger and perform. Each ability is triggered, but triggered differently based on input. Each ability also has a performing function, but the parameters and result of the functions differ for each ability. 
+> 
+> The Decorator pattern will be used in determining a character's stats that would be dependent on a fighting style interface, what weapon they wield, their ability, etc. These factors will be implemented into their own respective classes that in the end, make up a player's stats. The fighting style interface will depend on the character you select. We believe that a potential problem could be handling too much at once. For Decorator pattern, we may need to implement one for each stat rather than all stats together. As mentioned earlier, these patterns will work well with the ideas we stated, and this is going off of mainly our own research. We are also anticipating creating characters (with a total of 7-8 playable characters, and randomly-generated enemies) using Strategy pattern as well.
 
  > ## Phase II
  > In addition to completing the "Class Diagram" section below, you will need to 
