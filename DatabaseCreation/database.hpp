@@ -6,35 +6,31 @@ fndef __SPREADSHEET_HPP__
 #include <vector>
 #include <iosfwd>
 
-class Select;
 
 class Database
 {
     std::vector<std::string> column_names;
     std::vector<std::vector<std::string> > data;
-    Select* select = nullptr;
+    
+    String choice;
 
 public:
     ~Database(){
 	delete select;
     }
 
-    const std::string& cell_data(int row, int column) const
-    {
+    const std::string& cell_data(int row, int column) const{
         return data.at(row).at(column);
     }
 
-    std::string& cell_data(int row, int column)
-    {
+    std::string& cell_data(int row, int column){
         return data.at(row).at(column);
     }
 
-    void set_selection(Select* new_select){
-	delete select;
-	select = new_select;
+    void set_selection(String choice){
+		
     }
 
-    
     void print_selection(std::ostream& out{
 
     }
