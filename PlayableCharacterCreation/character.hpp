@@ -17,7 +17,6 @@ class Character{
 	public:
 	Character(){
 		rank=1;
-	//Implement Factory pattern
 	}
 	void setBaseStats(int atk, int def, int spatk, int spdef,int spd, int hp){
 		baseStats[0]=atk;
@@ -53,6 +52,15 @@ class Character{
 	string getName(){
 		return name;
 	}
+	int getRank(){
+		return rank;
+	}
+	string getFightStyle(){
+		return fightStyle;
+	}
+	char getWeaponStat(int i){
+		return weaponStats[i];
+	}
 	int getAttack(){
 		return baseStats[0];
 	}
@@ -71,6 +79,6 @@ class Character{
 	int getHP(){
 		return baseStats[5];
 	}
-
+	//virtual void display()=0;
 };
 #endif
