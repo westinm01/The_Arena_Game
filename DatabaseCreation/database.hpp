@@ -1,4 +1,4 @@
-fndef __DATABASE_HPP__
+#ifndef __DATABASE_HPP__
 #define __DATABASE_HPP__
 
 #include <initializer_list>
@@ -8,30 +8,28 @@ fndef __DATABASE_HPP__
 
 class Database
 {
-    vector<Character> enemies;    
+    vector<Character*> enemies;    
 
 public:
     ~Database(){}
 
-    Character* getEnemy(int choice){
- 	if(enemies.size() != 0){	
-     		switch (choice){
-		case "1":
+    Character* getEnemy(string choice){
+ 	if(enemies.size() != 0){		
+		if(choice == "1"){
 			return enemies.at(0);
-			break;
-		case "2":
+		}	
+		if(choice == "2"){
 			return enemies.at(1);
-			break;
-		case "3":
+		}
+		if(choice == "3"){
 			return enemies.at(2);
-			break;
-		case "4":
+		}
+		if(choice == "4"){
 			return enemies.at(3);
-			break;
-		case "5":
+		}
+		if(choice == "5"){
 			return enemies.at(4);
-			break;
-		default:
+		} else {
 			std::cout << "Invalid selection" << std::endl;
 		}
 	} else {

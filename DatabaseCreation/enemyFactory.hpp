@@ -1,4 +1,4 @@
-fndef ENEMYFACTORY_HPP
+#ifndef ENEMYFACTORY_HPP
 #define ENEMYFACTORY_HPP
 #include <string>
 #include "character.hpp"
@@ -13,7 +13,7 @@ class EnemyFactory{
 	public:
 	Character* makeCharacter(string choice, Database* data){
 		if(choice == "1"){
-			return data->getEnemy(characterChosen);
+			return data->getEnemy(choice);
 		}
 		if(choice == "2"){
 			return data->getEnemy(choice);
@@ -25,7 +25,7 @@ class EnemyFactory{
 			return data->getEnemy(choice);
 		}
 		if(choice == "5"){
-			return data->getEnemy(Shadow());
+			return data->getEnemy(choice);
 		}
 		return 0;
 		}

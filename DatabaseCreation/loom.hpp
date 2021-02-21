@@ -14,3 +14,5 @@ class Loom: public Character{
                         setStatusAilment(0);
 
                 }
+};
+#endif
