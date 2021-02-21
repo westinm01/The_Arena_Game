@@ -9,28 +9,33 @@ fndef __DATABASE_HPP__
 class Database
 {
     vector<Character> enemies;    
-    string choice;
 
 public:
-    ~Database(){
-
-    }
+    ~Database(){}
 
     Character* getEnemy(int choice){
-     	if(choice == "1"){
-		return new Vlad();
-	}
-	if(choiec =="2"){
-		return new Kenny();
-	}
-	if(choice == "3"){
-		return new Ryder();
-	}
-	if(choice == "4"){
-		return new Loom();
-	}
-	if(choice == "5"){
-		return new Shadow();
+ 	if(enemies.size() != 0){	
+     		switch (choice){
+		case "1":
+			return enemies.at(0);
+			break;
+		case "2":
+			return enemies.at(1);
+			break;
+		case "3":
+			return enemies.at(2);
+			break;
+		case "4":
+			return enemies.at(3);
+			break;
+		case "5":
+			return enemies.at(4);
+			break;
+		default:
+			std::cout << "Invalid selection" << std::endl;
+		}
+	} else {
+		std::cout << "ERROR: Empty database" << std::endl;
 	}
 	return 0;   
     }

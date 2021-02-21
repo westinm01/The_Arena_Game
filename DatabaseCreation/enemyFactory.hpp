@@ -1,7 +1,8 @@
-#ifndef ENEMYFACTORY_HPP
+fndef ENEMYFACTORY_HPP
 #define ENEMYFACTORY_HPP
 #include <string>
 #include "character.hpp"
+#include "database.hpp"
 #include "vlad.hpp"
 #include "kenny.hpp"
 #include "ryder.hpp"
@@ -10,21 +11,21 @@
 using namespace std;
 class EnemyFactory{
 	public:
-	Character* makeCharacter(string characterChosen){
-		if(characterChosen=="1"){
-			return new Vlad();
+	Character* makeCharacter(string choice, Database* data){
+		if(choice == "1"){
+			return data->getEnemy(characterChosen);
 		}
-		if(characterChosen=="2"){
-			return new Kenny();
+		if(choice == "2"){
+			return data->getEnemy(choice);
 		}
-		if(characterChosen=="3"){
-			return new Ryder();
+		if(choice == "3"){
+			return data->getEnemy(choice);
 		}
-		if(characterChosen=="4"){
-			return new Loom();
+		if(choice == "4"){
+			return data->getEnemy(choice);
 		}
-		if(characterChosen=="5"){
-			return new Shadow();
+		if(choice == "5"){
+			return data->getEnemy(Shadow());
 		}
 		return 0;
 		}
