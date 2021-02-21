@@ -9,7 +9,7 @@ fndef __DATABASE_HPP__
 class Database
 {
     vector<Character> enemies;    
-    int choice;
+    string choice;
 
 public:
     ~Database(){
@@ -17,11 +17,22 @@ public:
     }
 
     Character* getEnemy(int choice){
-        
-    }
-
-    void set_selection(String choice){
-		
+     	if(choice == "1"){
+		return new Vlad();
+	}
+	if(choiec =="2"){
+		return new Kenny();
+	}
+	if(choice == "3"){
+		return new Ryder();
+	}
+	if(choice == "4"){
+		return new Loom();
+	}
+	if(choice == "5"){
+		return new Shadow();
+	}
+	return 0;   
     }
     
     void clear(){
