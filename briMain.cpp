@@ -8,8 +8,7 @@ using namespace std;
 int main(){
 	Database db;
 
-/*
-	
+/*	
 	Vlad* vla = new Vlad();
 	Kenny* ken = new Kenny();
 	Ryder* ryd = new Ryder();
