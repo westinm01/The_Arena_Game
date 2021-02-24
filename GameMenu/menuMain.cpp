@@ -1,8 +1,10 @@
 #include <iostream>
 #include "menu.hpp"
 
+using namespace std; 
+
 int main(){
-    Menu test;
-    test.printMenu();
+    MainMenu* test = new MainMenu();
+    test->printMenu();
 }
 

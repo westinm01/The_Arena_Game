@@ -6,21 +6,22 @@
 using namespace std;
 
 class Menu{
+public:    
     Menu(){};
-    //virtual ~Menu(){};
+    virtual ~Menu(){};
     virtual void printMenu() = 0;
-    virtual void retrieveInput() = 0;
+    //virtual void retrieveInput() = 0;
 };
 
 class MainMenu : public Menu{
 public:
-    vector <Menu*> menuChoices;
-    MainMenu{
+    //vector <Menu*> menuChoices;
+   /* MainMenu{
 	menuChoices.push_back(Menu* inventory);
 	menuChoices.push_back(Menu* character);
 	menuChoices.push_back(Menu* shop);
 	menuChoices.push_back(Menu* settings);
-}
+} */
     virtual void printMenu(){
 	cout << "-= Main Menu =-" << endl;
 	cout << "1. Inventory" << endl;
@@ -29,7 +30,7 @@ public:
 	cout << "4. Settings" << endl;
 	cout << "5. Quit Game" << endl;	    
     }
-     
+};     
 /*    virtual void retrieveInput(string choice){
 	if (choice == "1"){
 	    //inventory();   
