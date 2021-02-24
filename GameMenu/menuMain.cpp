@@ -4,7 +4,7 @@
 using namespace std; 
 
 int main(){
-    MainMenu* test = new MainMenu();
+    Menu* test = new MainMenu();
     test->printMenu();
 }
 
