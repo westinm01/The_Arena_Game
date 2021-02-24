@@ -20,7 +20,7 @@ public:
 	cout << "2. Character" << endl;
 	cout << "3. Shop" << endl;
 	cout << "4. Settings" << endl;
-	cout << "5. Quit" << endl;	    
+	cout << "5. Quit Game" << endl;	    
     }
     vector <Menu*> menuChoices;
 
@@ -32,13 +32,13 @@ public:
 	    character();
 	}
 	if (choice == "3") {
-	    shop();
+	    sdhop();
 	}
 	if (choice == "4") {
 	    settings();
 	}
 	if (choice == "5") {
-	    quit();
+	    quitGame();
 	}
     }	
 
@@ -47,10 +47,14 @@ class Settings : public Menu{
     virtual void printMenu(){
 	cout << "-= Settings =-" << endl;
 	cout << "1. Harness" << endl;
+	cout << "2. Back" << endl;
     }   
     virtual void retrieveInput(string choice){
 	if (choice == "1"){
 	    hardness();
+	}
+	if (choice == "2"){
+	    back();
 	}
     }
 };  
@@ -59,7 +63,7 @@ class Shop : public Menu{
     virtual void printMenu(){
 	cout << "-= Shop =-" << endl;
 	cout << "1. Browse" << endl;
-	cout << "2. Quit" << endl;
+	cout << "2. Back" << endl;
     }
 
     virtual void retrieveInput(string choice){
@@ -67,10 +71,9 @@ class Shop : public Menu{
             browse();
 	}
 	if (choice == "2"){
-	    quit();
+	    back();
 	}
     }
 }; 
 
 #endif
-
