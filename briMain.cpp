@@ -7,12 +7,35 @@ using namespace std;
 
 int main(){
 	Database db;
+
+/*
+	
+	Vlad* vla = new Vlad();
+	Kenny* ken = new Kenny();
+	Ryder* ryd = new Ryder();
+	Loom* loo = new Loom();
+	Shadow* sha = new Shadow();
+
+	db.add_enemy(vla); //1
+	db.add_enemy(ken); //2
+	db.add_enemy(ryd)); //3
+	db.add_enemy(loo); //4
+	db.add_enemy(sha); //5
+*/
 	
 	db.add_enemy(new Vlad()); //1
 	db.add_enemy(new Kenny()); //2
 	db.add_enemy(new Ryder()); //3
 	db.add_enemy(new Loom()); //4
 	db.add_enemy(new Shadow()); //5
+
+/*
+ 	delete vla;
+	delete ken;
+	delete ryd;
+	delete loo;
+	delete sha;
+*/
 
 	string choice;
 
@@ -29,6 +52,8 @@ int main(){
 	Character* enemy;
 
 	enemy = factory->makeCharacter(choice, &db);
+
+	delete factory;
 
 	std::cout << "You have chosen " << enemy->getName() << "!" << std::endl;
 	std::cout << "Base Stats: " << std::endl;
