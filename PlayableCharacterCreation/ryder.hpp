@@ -1,25 +1,23 @@
-#ifndef REVVIN_HPP
-#define REVVIN_HPP
-
-#include "character.hpp"
-#include <string>
+#ifndef RYDER_HPP
+#define RYDER_HPP
 #include <iostream>
 #include <fstream>
+#include "character.hpp"
+#include <string>
 using namespace std;
-class Revvin: public Character{
+class Ryder: public Character{
         public:
-                Revvin(){
-                        setName("Revvin");
-                        setBaseStats(15,7,8,8,11,10);
-                        setWeaponStats('B','A','C','A','S','D','C','C');
+                Ryder(){
+                        setName("Ryder");
+                        setBaseStats(15,10,7,8,11,8);
+                        setWeaponStats('B','S','C','S','A','D','D','D');
                         setFightStyle("Rebel");
                         setStatusAilment(0);
-			//setImageFilePath((const char*)"../characterImages/revvinImage.txt");
-
+			//setImageFilePath((const char*)"../characterImages/ryderImage.txt");
                 }
 		virtual void display(){
                         ifstream fin;
-                        fin.open("characterImages/revvinImage.txt");
+                        fin.open("characterImages/ryderImage.txt");
                         string line;
                         while(fin.good()){
                                 getline(fin,line);

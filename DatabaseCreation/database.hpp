@@ -4,32 +4,23 @@
 #include <initializer_list>
 #include <vector>
 #include <iosfwd>
-
+#include <iostream>
 
 class Database
 {
-    vector<Character*> enemies;    
+    vector<Character*> characters;    
 
 public:
     ~Database(){}
+	Database(){
+		
+	}
+    Character* getCharacter(string choice){
+ 	if(characters.size() != 0){		
 
-    Character* getEnemy(string choice){
- 	if(enemies.size() != 0){		
-		if(choice == "1"){
-			return enemies.at(0);
-		}	
-		if(choice == "2"){
-			return enemies.at(1);
+			return characters.at(stoi(choice));
 		}
-		if(choice == "3"){
-			return enemies.at(2);
-		}
-		if(choice == "4"){
-			return enemies.at(3);
-		}
-		if(choice == "5"){
-			return enemies.at(4);
-		} else {
+		 else {
 			std::cout << "Invalid selection" << std::endl;
 		}
 	} else {
@@ -39,13 +30,21 @@ public:
     }
     
     void clear(){
-	enemies.clear();
+	characters.clear();
     }
   
-    void add_enemy(Character* enemy){
-	enemies.push_back(enemy);
+    void add_character(Character* c){
+	characters.push_back(c);
     }
-    
+	void display_database(){
+		if(characters.size()==0){
+			cout<<"Database is empty."<<endl;
+			return;
+		}
+		for(int i=0; i<characters.size();i++){
+			cout<<i+1<<") "<<characters.at(i)->getName()<<endl;
+		}
+  }  
 };
    
 #endif //__DATABASE_HPP__

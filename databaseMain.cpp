@@ -1,7 +1,8 @@
 #include <iostream>
-#include "DatabaseCreation/character.hpp"
+#include "PlayableCharacterCreation/characterFactory.hpp"
+#include "PlayableCharacterCreation/character.hpp"
 #include "DatabaseCreation/database.hpp"
-#include "DatabaseCreation/enemyFactory.hpp"
+//#include "DatabaseCreation/enemyFactory.hpp"
 
 using namespace std;
 
@@ -22,12 +23,12 @@ int main(){
 	db.add_enemy(sha); //5
 */
 	
-	db.add_enemy(new Vlad()); //1
+	/*db.add_enemy(new Vlad()); //1
 	db.add_enemy(new Kenny()); //2
 	db.add_enemy(new Ryder()); //3
 	db.add_enemy(new Loom()); //4
 	db.add_enemy(new Shadow()); //5
-
+*/
 /*
  	delete vla;
 	delete ken;
@@ -47,10 +48,10 @@ int main(){
 	
 	cin >> choice;
 
-	EnemyFactory* factory = new EnemyFactory();
+	CharacterFactory* factory = new CharacterFactory();
 	Character* enemy;
 
-	enemy = factory->makeCharacter(choice, &db);
+	enemy = factory->makeCharacter(choice);
 
 	delete factory;
 
@@ -61,10 +62,8 @@ int main(){
         std::cout << "Intelligence: " << enemy->getSpecialAttack()<< std::endl;
         std::cout << "Special Defense: " << enemy->getSpecialDefense()<< std::endl;
         std::cout << "Speed: " << enemy->getSpeed()<< std::endl;
-        std::cout << "Health:" << enemy->getHp()<< std::endl;
-	 
+        std::cout << "Health:" << enemy->getHP()<< std::endl;
+	delete enemy;
 	return 0;
 	
-
-
 }

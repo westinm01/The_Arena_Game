@@ -46,6 +46,7 @@ Character* characterSelection(){
         if(mainCharacter==0){
                 return 0;
         }
+	mainCharacter->display();
         cout<<"You have chosen "<<mainCharacter->getName()<<"!"<<endl;
         cout<<"Base Stats: "<<endl;
         cout<<"\tAttack:" <<mainCharacter->getAttack()<<endl;

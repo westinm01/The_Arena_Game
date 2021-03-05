@@ -1,6 +1,8 @@
 #ifndef CHARACTER_HPP
 #define CHARACTER_HPP
 #include <string>
+#include <iostream>
+#include <fstream>
 using namespace std;
 
 class Character{
@@ -14,6 +16,7 @@ class Character{
 	//Attack[4]attacks;
 	//Ability uniqueAbility;
 	int statusAilment;
+	const char* imageFilePath;
 	public:
 	Character(){
 		rank=1;
@@ -49,6 +52,12 @@ class Character{
 	void setFightStyle(string style){
 		fightStyle=style;
 	}
+	void setImageFilePath(const char*  x){
+		imageFilePath=x;
+	}
+	const char* getImageFilePath(){
+		return imageFilePath; 
+	}
 	string getName(){
 		return name;
 	}
@@ -79,6 +88,7 @@ class Character{
 	int getHP(){
 		return baseStats[5];
 	}
-	//virtual void display()=0;
+	virtual void display()=0;
+	
 };
 #endif

@@ -1,0 +1,3 @@
+/home/csmajs/wmont012/final-project-bmcgh001-mghor004-wmont012/CMakeFiles/rebuild_cache.dir
+/home/csmajs/wmont012/final-project-bmcgh001-mghor004-wmont012/CMakeFiles/edit_cache.dir
+/home/csmajs/wmont012/final-project-bmcgh001-mghor004-wmont012/CMakeFiles/databaseTest.dir
