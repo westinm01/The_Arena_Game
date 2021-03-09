@@ -3,6 +3,8 @@
 #include <string>
 #include <iostream>
 #include <fstream>
+#include "../AbilityItem/ability.hpp"
+#include "../AbilityItem/item.hpp"
 using namespace std;
 
 class Character{
@@ -14,7 +16,7 @@ class Character{
 	//Item[3] equippedItems;
 	int rank;
 	//Attack[4]attacks;
-	//Ability uniqueAbility;
+	Ability* uniqueAbility;
 	int statusAilment;
 	const char* imageFilePath;
 	public:
@@ -58,6 +60,9 @@ class Character{
 	const char* getImageFilePath(){
 		return imageFilePath; 
 	}
+	void setAbility(Ability* a){
+		uniqueAbility = a;
+	}
 	string getName(){
 		return name;
 	}
@@ -87,6 +92,13 @@ class Character{
 	}
 	int getHP(){
 		return baseStats[5];
+	}
+	Ability* getAbility(){
+		return uniqueAbility;
+	}
+	void showAbility(){
+		cout << "Name: " << uniqueAbility->getName() << endl;
+		cout << "Description: " << uniqueAbility->getDescription() << endl;
 	}
 	virtual void display()=0;
 	
