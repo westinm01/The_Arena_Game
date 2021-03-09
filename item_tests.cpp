@@ -12,21 +12,18 @@
 using namespace std;
 
 TEST(ItemTest, SLanceTest){  
-
-     	Character* mainCharacter;
-	CharacterFactory *factory=new CharacterFactory();
-        
-        mainCharacter=factory->makeCharacter("1");
-	cout << "Initial health: " << mainCharacter->getHP() << endl;
 	
-	mainCharacter->addItem(new SLance(mainCharacter));
-	
-	mainCharacter->equippedItems.at(1)->itemBehavior();
+	Item* i = new SLance();
 
-	cout << "Final health: " << mainCharacter->getHP() << endl;
+        EXPECT_EQ(i->getPrice(), 30);
+	EXPECT_EQ(i->getItemType(), 3);
+	EXPECT_EQ(i->getName(), "Standard Lance"); 
+}
 
-        EXPECT_EQ(mainCharacter->showItem(1), "Standard Lance\n30");
-	 
+TEST(ItemTest, TDaggTest){
+	Item* i = new TDagg();
+
+	EXPECT_EQ(i->getName(), "Thief Dagger");
 }
 
 #endif
