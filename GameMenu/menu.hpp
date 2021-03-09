@@ -15,13 +15,14 @@ public:
 
 class MainMenu : public Menu{
 public:
-    //vector <Menu*> menuChoices;
-   /* MainMenu{
-	menuChoices.push_back(Menu* inventory);
-	menuChoices.push_back(Menu* character);
-	menuChoices.push_back(Menu* shop);
-	menuChoices.push_back(Menu* settings);
-} */
+    vector <Menu*> menuChoices;
+    MainMenu(){
+	Menu* settings;
+	//menuChoices.push_back(Menu* inventory);
+	//menuChoices.push_back(Menu* character);
+	//menuChoices.push_back(Menu* shop);
+	menuChoices.push_back(settings);
+    } 
     virtual void printMenu(){
 	cout << "-= Main Menu =-" << endl;
 	cout << "1. Inventory" << endl;
@@ -30,9 +31,9 @@ public:
 	cout << "4. Settings" << endl;
 	cout << "5. Quit Game" << endl;	    
     }
-};     
-/*    virtual void retrieveInput(string choice){
-	if (choice == "1"){
+     
+    virtual void retrieveInput(string choice){
+	/*if (choice == "1"){
 	    //inventory();   
 	}
 	if (choice == "2") {
@@ -40,19 +41,19 @@ public:
 	}
 	if (choice == "3") {
 	    shop();
-	}
+	} */
 	if (choice == "4") {
-	    settings();
+	    menuChoices.at(0)->printMenu();
 	}
-	if (choice == "5") {
+	//if (choice == "5") {
 	    //quitGame();
-	}
-    }	
+	//}	
+    }
 };
 
 class Settings : public Menu{
 public:   
-    Settings() {}
+   Settings() {}
  
    virtual void printMenu(){
 	cout << "-= Settings =-" << endl;
@@ -62,13 +63,15 @@ public:
     virtual void retrieveInput(string choice){
 	if (choice == "1"){
 	    //hardness();
+	    cout << "hardness" << endl;  //DELETE LATER
 	}
 	if (choice == "2"){
 	    //back();
+	    cout << "back" << endl;  //DELETE LATER
 	}
     }
 };  
-
+/*
 class Shop : public Menu{
 public:    
     Shop() {}

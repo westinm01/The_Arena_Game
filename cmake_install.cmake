@@ -1,4 +1,4 @@
-# Install script for directory: /home/csmajs/wmont012/final-project-bmcgh001-mghor004-wmont012
+# Install script for directory: /home/csmajs/mghor004/final-project-bmcgh001-mghor004-wmont012
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/csmajs/wmont012/final-project-bmcgh001-mghor004-wmont012/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/csmajs/mghor004/final-project-bmcgh001-mghor004-wmont012/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

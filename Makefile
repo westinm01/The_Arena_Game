@@ -68,10 +68,10 @@ RM = /usr/bin/cmake3 -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/csmajs/wmont012/final-project-bmcgh001-mghor004-wmont012
+CMAKE_SOURCE_DIR = /home/csmajs/mghor004/final-project-bmcgh001-mghor004-wmont012
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/csmajs/wmont012/final-project-bmcgh001-mghor004-wmont012
+CMAKE_BINARY_DIR = /home/csmajs/mghor004/final-project-bmcgh001-mghor004-wmont012
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -100,9 +100,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/csmajs/wmont012/final-project-bmcgh001-mghor004-wmont012/CMakeFiles /home/csmajs/wmont012/final-project-bmcgh001-mghor004-wmont012/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/csmajs/mghor004/final-project-bmcgh001-mghor004-wmont012/CMakeFiles /home/csmajs/mghor004/final-project-bmcgh001-mghor004-wmont012/CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/csmajs/wmont012/final-project-bmcgh001-mghor004-wmont012/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/csmajs/mghor004/final-project-bmcgh001-mghor004-wmont012/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -131,44 +131,44 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named databaseTest
+# Target rules for targets named menuTest
 
 # Build rule for target.
-databaseTest: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 databaseTest
-.PHONY : databaseTest
+menuTest: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 menuTest
+.PHONY : menuTest
 
 # fast build rule for target.
-databaseTest/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/databaseTest.dir/build.make CMakeFiles/databaseTest.dir/build
-.PHONY : databaseTest/fast
+menuTest/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/menuTest.dir/build.make CMakeFiles/menuTest.dir/build
+.PHONY : menuTest/fast
 
-databaseMain.o: databaseMain.cpp.o
+GameMenu/menuMain.o: GameMenu/menuMain.cpp.o
 
-.PHONY : databaseMain.o
+.PHONY : GameMenu/menuMain.o
 
 # target to build an object file
-databaseMain.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/databaseTest.dir/build.make CMakeFiles/databaseTest.dir/databaseMain.cpp.o
-.PHONY : databaseMain.cpp.o
+GameMenu/menuMain.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/menuTest.dir/build.make CMakeFiles/menuTest.dir/GameMenu/menuMain.cpp.o
+.PHONY : GameMenu/menuMain.cpp.o
 
-databaseMain.i: databaseMain.cpp.i
+GameMenu/menuMain.i: GameMenu/menuMain.cpp.i
 
-.PHONY : databaseMain.i
+.PHONY : GameMenu/menuMain.i
 
 # target to preprocess a source file
-databaseMain.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/databaseTest.dir/build.make CMakeFiles/databaseTest.dir/databaseMain.cpp.i
-.PHONY : databaseMain.cpp.i
+GameMenu/menuMain.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/menuTest.dir/build.make CMakeFiles/menuTest.dir/GameMenu/menuMain.cpp.i
+.PHONY : GameMenu/menuMain.cpp.i
 
-databaseMain.s: databaseMain.cpp.s
+GameMenu/menuMain.s: GameMenu/menuMain.cpp.s
 
-.PHONY : databaseMain.s
+.PHONY : GameMenu/menuMain.s
 
 # target to generate assembly for a file
-databaseMain.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/databaseTest.dir/build.make CMakeFiles/databaseTest.dir/databaseMain.cpp.s
-.PHONY : databaseMain.cpp.s
+GameMenu/menuMain.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/menuTest.dir/build.make CMakeFiles/menuTest.dir/GameMenu/menuMain.cpp.s
+.PHONY : GameMenu/menuMain.cpp.s
 
 # Help Target
 help:
@@ -178,10 +178,10 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... databaseTest"
-	@echo "... databaseMain.o"
-	@echo "... databaseMain.i"
-	@echo "... databaseMain.s"
+	@echo "... menuTest"
+	@echo "... GameMenu/menuMain.o"
+	@echo "... GameMenu/menuMain.i"
+	@echo "... GameMenu/menuMain.s"
 .PHONY : help
 
 
