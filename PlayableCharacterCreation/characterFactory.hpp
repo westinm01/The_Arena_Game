@@ -7,6 +7,11 @@
 #include "revvin.hpp"
 #include "tuckson.hpp"
 #include "winelle.hpp"
+#include "shadow.hpp"
+#include "loom.hpp"
+#include "kenny.hpp"
+#include "ryder.hpp"
+#include "vlad.hpp"
 using namespace std;
 class CharacterFactory{
 	public:
@@ -25,6 +30,21 @@ class CharacterFactory{
 		}
 		if(characterChosen=="5"){
 			return new Winelle();
+		}
+		if(characterChosen=="6"){
+			return new Shadow();
+		}
+		if(characterChosen=="7"){
+			return new Loom();
+		}
+		if(characterChosen=="8"){
+			return new Kenny();
+		}
+		if(characterChosen=="9"){
+			return new Ryder();
+		}
+		if(characterChosen=="10"){
+			return new Vlad();
 		}
 		return 0;
 		}

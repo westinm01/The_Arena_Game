@@ -1,0 +1,1 @@
+/usr/bin/c++    -rdynamic CMakeFiles/databaseTest.dir/databaseMain.cpp.o  -o databaseTest 

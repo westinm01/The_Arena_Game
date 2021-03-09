@@ -3,7 +3,9 @@
 
 #include "character.hpp"
 #include <string>
-
+#include <iostream>
+#include <fstream>
+using namespace std;
 class Kaani: public Character{
         public:
                 Kaani(){
@@ -12,7 +14,17 @@ class Kaani: public Character{
                         setWeaponStats('C','S','D','B','A','C','S','B');
                         setFightStyle("Ninja");
                         setStatusAilment(0);
-
+			//setImageFilePath((const char*)"../characterImages/kaaniImage.txt");
+                }
+		virtual void display(){
+                        ifstream fin;
+                        fin.open("characterImages/kaaniImage.txt",ios::in);
+                        string line;
+                        while(fin.good()){
+                                getline(fin,line);
+                                cout<<line<<endl;
+                        }
+                        fin.close();
                 }
 
 };
