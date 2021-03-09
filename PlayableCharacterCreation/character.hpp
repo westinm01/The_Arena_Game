@@ -30,6 +30,10 @@ class Character{
 		baseStats[5]=hp;
 		setHealth(baseStats[5]);
 	}
+	
+	void setStat(int stat, int change){
+		baseStats[stats]=change;
+	}
 	void setWeaponStats(char sword, char dagger, char lance, char fists, char nunchuck, char staff, char star, char shield){
 		weaponStats[0]=sword;
 		weaponStats[1]=dagger;
@@ -87,6 +91,9 @@ class Character{
 	}
 	int getHP(){
 		return baseStats[5];
+	}
+	int getStat(int stat){
+		return stat;
 	}
 	virtual void display()=0;
 	
