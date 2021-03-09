@@ -10,18 +10,18 @@ public:
     Menu(){};
     virtual ~Menu(){};
     virtual void printMenu() = 0;
-    //virtual void retrieveInput() = 0;
+    virtual void retrieveInput() = 0;
 };
 
 class MainMenu : public Menu{
 public:
-    vector <Menu*> menuChoices;
+    //vector <Menu*> menuChoices;
     MainMenu(){
-	Menu* settings;
+	//Menu* settings;
 	//menuChoices.push_back(Menu* inventory);
 	//menuChoices.push_back(Menu* character);
 	//menuChoices.push_back(Menu* shop);
-	menuChoices.push_back(settings);
+	//menuChoices.push_back(settings);
     } 
     virtual void printMenu(){
 	cout << "-= Main Menu =-" << endl;
@@ -32,7 +32,9 @@ public:
 	cout << "5. Quit Game" << endl;	    
     }
      
-    virtual void retrieveInput(string choice){
+    virtual void retrieveInput(){
+	string choice;
+	cin >> choice;
 	/*if (choice == "1"){
 	    //inventory();   
 	}
@@ -43,7 +45,8 @@ public:
 	    shop();
 	} */
 	if (choice == "4") {
-	    menuChoices.at(0)->printMenu();
+	    //menuChoices.at(0)->printMenu();
+	    cout << "Picked 5" << endl; //DELETE LATER
 	}
 	//if (choice == "5") {
 	    //quitGame();
