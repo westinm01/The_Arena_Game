@@ -13,7 +13,7 @@ class Character{
 	int baseStats[6];
 	char weaponStats[8];
 	int health;
-	//Item[3] equippedItems;
+	vector<Item*>equippedItems;
 	int rank;
 	//Attack[4]attacks;
 	Ability* uniqueAbility;
@@ -32,6 +32,9 @@ class Character{
 		baseStats[5]=hp;
 		setHealth(baseStats[5]);
 	}
+	void setStat(int stat, int change){
+		baseStats[stat] = change;
+	}
 	void setWeaponStats(char sword, char dagger, char lance, char fists, char nunchuck, char staff, char star, char shield){
 		weaponStats[0]=sword;
 		weaponStats[1]=dagger;
@@ -41,6 +44,14 @@ class Character{
 		weaponStats[5]=staff;
 		weaponStats[6]=star;
 		weaponStats[7]=shield;
+	}
+	
+	void addItem(Item* i){
+		if(equippedItems.size() != 3){
+			equippedItems.push_back(i);
+		} else {
+			cout << "You've reached max # of items!" << endl;
+		}
 	}
 	void setName(string specifiedName){
 		name=specifiedName;
@@ -96,6 +107,15 @@ class Character{
 	Ability* getAbility(){
 		return uniqueAbility;
 	}
+	Item* getItem(int num){
+		return equippedItems.at(num - 1);
+	}
+
+	void showItem(int num){
+		cout << "Name: " << equippedItems.at(num - 1)->getName() << endl;
+		cout << "Price: " << equippedItems.at(num - 1)->getPrice() << endl;
+	}
+
 	void showAbility(){
 		cout << "Name: " << uniqueAbility->getName() << endl;
 		cout << "Description: " << uniqueAbility->getDescription() << endl;

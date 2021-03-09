@@ -1,5 +1,5 @@
-#ifndef __DECO_TESTS_CPP__
-#define __DECO_TESTS_CPP__
+#ifndef __ABILITY_TESTS_CPP__
+#define __ABILITY_TESTS_CPP__
 
 #include "gtest/gtest.h"
 #include "AbilityItem/ability.hpp"
