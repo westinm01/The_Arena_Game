@@ -12,7 +12,8 @@ int main() {
     MenuController* mc = new MenuController();
     mc->mainMenu->printMenu();
     mc->mainMenu->retrieveInput();
-
+    
+    delete mc;
 
     return 0;
 }

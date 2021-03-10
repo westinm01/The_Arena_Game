@@ -8,6 +8,10 @@ class MenuController {
 public:
     MainMenu* mainMenu = new MainMenu(this);
     Settings* settings = new Settings(this);
+    ~MenuController(){
+	delete mainMenu;
+	delete settings;
+    }  
 };
 
 #endif
