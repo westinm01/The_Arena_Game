@@ -57,10 +57,8 @@ public:
     }
      
    virtual void retrieveInput(){
-	cout << "main menu retrieveInput test" << endl;
-//	setting->printMenu();
-	//string choices;
-	//cin >> choices;
+	string choice;
+	cin >> choice;
 	/*if (choice == "1"){
 	    //inventory();   
 	}
@@ -70,11 +68,10 @@ public:
 	if (choice == "3") {
 	    shop();
 	} */
-//	if (choices == "4") {
-//	    cout << "Settings Selected" << endl; //DELETE LATER
-//	    setting->printMenu();
+	if (choice == "4") {
+	    setting->printMenu();
   	    //setting->retrieveInput();
-//	}
+	}
 	//if (choice == "5") {
 	    //quitGame();
 	//}	
