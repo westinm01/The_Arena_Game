@@ -6,6 +6,7 @@
 #include "PlayableCharacterCreation/characterFactory.hpp"
 #include "PlayableCharacterCreation/character.hpp"
 using namespace std;
+class Attack;
 Character* characterSelection();
 void DisplayIntro(const char* filepath);
 void sleep(int sec);

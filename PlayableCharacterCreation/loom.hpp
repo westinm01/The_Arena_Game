@@ -4,8 +4,8 @@
 #include "character.hpp"
 #include <string>
 #include <iostream>
-//#include "../Attacks/attack.hpp"
-//#include "../Attacks/SLEEP_SPELL.hpp"
+#include "../Attacks/attack.hpp"
+#include "../Attacks/SLEEP_SPELL.hpp"
 //#include "../Attacks/MOONLIGHT_MADNESS.hpp"
 //#include "../Attacks/DREAM_DRAIN.hpp"
 //#include "../Attacks/HEX.hpp"
@@ -18,8 +18,9 @@ class Loom: public Character{
                         setWeaponStats('D','C','D','C','D','S','D','C');
                         setFightStyle("Mage");
                         setStatusAilment(0);
-			//Attack * one = new SleepSpell();
+			Attack * one = new SleepSpell();
 			//setAttack(one);
+			delete one;
 			//Attack* two = new MoonlightMadness();
 			//setAttack(two);
 			//Attack* three = new DreamDrain();

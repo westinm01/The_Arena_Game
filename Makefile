@@ -76,6 +76,52 @@ CMAKE_BINARY_DIR = /home/csmajs/wmont012/final-project-bmcgh001-mghor004-wmont01
 #=============================================================================
 # Targets provided globally by CMake.
 
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake3 -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake3 -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip/fast
+
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake3 -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake3 -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local/fast
+
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake3 -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake3 -P cmake_install.cmake
+.PHONY : install/fast
+
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+
+.PHONY : list_install_components/fast
+
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -131,44 +177,176 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named databaseTest
+# Target rules for targets named itemMain
 
 # Build rule for target.
-databaseTest: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 databaseTest
-.PHONY : databaseTest
+itemMain: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 itemMain
+.PHONY : itemMain
 
 # fast build rule for target.
-databaseTest/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/databaseTest.dir/build.make CMakeFiles/databaseTest.dir/build
-.PHONY : databaseTest/fast
+itemMain/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/itemMain.dir/build.make CMakeFiles/itemMain.dir/build
+.PHONY : itemMain/fast
 
-databaseMain.o: databaseMain.cpp.o
+#=============================================================================
+# Target rules for targets named abilityMain
 
-.PHONY : databaseMain.o
+# Build rule for target.
+abilityMain: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 abilityMain
+.PHONY : abilityMain
+
+# fast build rule for target.
+abilityMain/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/abilityMain.dir/build.make CMakeFiles/abilityMain.dir/build
+.PHONY : abilityMain/fast
+
+#=============================================================================
+# Target rules for targets named test
+
+# Build rule for target.
+test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test
+.PHONY : test
+
+# fast build rule for target.
+test/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/build
+.PHONY : test/fast
+
+#=============================================================================
+# Target rules for targets named gmock_main
+
+# Build rule for target.
+gmock_main: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gmock_main
+.PHONY : gmock_main
+
+# fast build rule for target.
+gmock_main/fast:
+	$(MAKE) $(MAKESILENT) -f googletest/googlemock/CMakeFiles/gmock_main.dir/build.make googletest/googlemock/CMakeFiles/gmock_main.dir/build
+.PHONY : gmock_main/fast
+
+#=============================================================================
+# Target rules for targets named gmock
+
+# Build rule for target.
+gmock: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gmock
+.PHONY : gmock
+
+# fast build rule for target.
+gmock/fast:
+	$(MAKE) $(MAKESILENT) -f googletest/googlemock/CMakeFiles/gmock.dir/build.make googletest/googlemock/CMakeFiles/gmock.dir/build
+.PHONY : gmock/fast
+
+#=============================================================================
+# Target rules for targets named gtest_main
+
+# Build rule for target.
+gtest_main: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gtest_main
+.PHONY : gtest_main
+
+# fast build rule for target.
+gtest_main/fast:
+	$(MAKE) $(MAKESILENT) -f googletest/googletest/CMakeFiles/gtest_main.dir/build.make googletest/googletest/CMakeFiles/gtest_main.dir/build
+.PHONY : gtest_main/fast
+
+#=============================================================================
+# Target rules for targets named gtest
+
+# Build rule for target.
+gtest: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gtest
+.PHONY : gtest
+
+# fast build rule for target.
+gtest/fast:
+	$(MAKE) $(MAKESILENT) -f googletest/googletest/CMakeFiles/gtest.dir/build.make googletest/googletest/CMakeFiles/gtest.dir/build
+.PHONY : gtest/fast
+
+abilityMain.o: abilityMain.cpp.o
+
+.PHONY : abilityMain.o
 
 # target to build an object file
-databaseMain.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/databaseTest.dir/build.make CMakeFiles/databaseTest.dir/databaseMain.cpp.o
-.PHONY : databaseMain.cpp.o
+abilityMain.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/abilityMain.dir/build.make CMakeFiles/abilityMain.dir/abilityMain.cpp.o
+.PHONY : abilityMain.cpp.o
 
-databaseMain.i: databaseMain.cpp.i
+abilityMain.i: abilityMain.cpp.i
 
-.PHONY : databaseMain.i
+.PHONY : abilityMain.i
 
 # target to preprocess a source file
-databaseMain.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/databaseTest.dir/build.make CMakeFiles/databaseTest.dir/databaseMain.cpp.i
-.PHONY : databaseMain.cpp.i
+abilityMain.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/abilityMain.dir/build.make CMakeFiles/abilityMain.dir/abilityMain.cpp.i
+.PHONY : abilityMain.cpp.i
 
-databaseMain.s: databaseMain.cpp.s
+abilityMain.s: abilityMain.cpp.s
 
-.PHONY : databaseMain.s
+.PHONY : abilityMain.s
 
 # target to generate assembly for a file
-databaseMain.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/databaseTest.dir/build.make CMakeFiles/databaseTest.dir/databaseMain.cpp.s
-.PHONY : databaseMain.cpp.s
+abilityMain.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/abilityMain.dir/build.make CMakeFiles/abilityMain.dir/abilityMain.cpp.s
+.PHONY : abilityMain.cpp.s
+
+itemMain.o: itemMain.cpp.o
+
+.PHONY : itemMain.o
+
+# target to build an object file
+itemMain.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/itemMain.dir/build.make CMakeFiles/itemMain.dir/itemMain.cpp.o
+.PHONY : itemMain.cpp.o
+
+itemMain.i: itemMain.cpp.i
+
+.PHONY : itemMain.i
+
+# target to preprocess a source file
+itemMain.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/itemMain.dir/build.make CMakeFiles/itemMain.dir/itemMain.cpp.i
+.PHONY : itemMain.cpp.i
+
+itemMain.s: itemMain.cpp.s
+
+.PHONY : itemMain.s
+
+# target to generate assembly for a file
+itemMain.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/itemMain.dir/build.make CMakeFiles/itemMain.dir/itemMain.cpp.s
+.PHONY : itemMain.cpp.s
+
+test.o: test.cpp.o
+
+.PHONY : test.o
+
+# target to build an object file
+test.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/test.cpp.o
+.PHONY : test.cpp.o
+
+test.i: test.cpp.i
+
+.PHONY : test.i
+
+# target to preprocess a source file
+test.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/test.cpp.i
+.PHONY : test.cpp.i
+
+test.s: test.cpp.s
+
+.PHONY : test.s
+
+# target to generate assembly for a file
+test.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/test.cpp.s
+.PHONY : test.cpp.s
 
 # Help Target
 help:
@@ -177,11 +355,27 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... edit_cache"
+	@echo "... install"
+	@echo "... install/local"
+	@echo "... install/strip"
+	@echo "... list_install_components"
 	@echo "... rebuild_cache"
-	@echo "... databaseTest"
-	@echo "... databaseMain.o"
-	@echo "... databaseMain.i"
-	@echo "... databaseMain.s"
+	@echo "... abilityMain"
+	@echo "... gmock"
+	@echo "... gmock_main"
+	@echo "... gtest"
+	@echo "... gtest_main"
+	@echo "... itemMain"
+	@echo "... test"
+	@echo "... abilityMain.o"
+	@echo "... abilityMain.i"
+	@echo "... abilityMain.s"
+	@echo "... itemMain.o"
+	@echo "... itemMain.i"
+	@echo "... itemMain.s"
+	@echo "... test.o"
+	@echo "... test.i"
+	@echo "... test.s"
 .PHONY : help
 
 

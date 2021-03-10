@@ -5,6 +5,7 @@
 #include <time.h>
 #include <stdio.h>
 #include "../PlayableCharacterCreation/character.hpp"
+//class Character;
 using namespace std;
 class Attack{
 	string name;
@@ -16,6 +17,7 @@ class Attack{
 	Character * target;
 	Character * user;
 	public:
+		Attack(){}
 		Attack(int baseDamage, int weaponType, int dependency,int defensive){
 			this->baseDamage=baseDamage;
 			this->weaponType=weaponType;
@@ -37,12 +39,14 @@ class Attack{
 		void setDefensive(int defensive){this->defensive=defensive;}
 		virtual void attackBehavior()=0;
 		void setTarget(Character* target){this->target=target;}
+		Character * getTarget(){return target;}
+		Character * getUser(){return user;}
 		void setUser(Character* user){this->user=user;}
 		int dealDamage(){
 			
 			int damage=((2*(user->getRank())/3+2)*baseDamage*(user->getStat(dependency-1))*(target->getStat(defensive-1))/50)+2;
-			for(int i=0; i < user->getItemSize();i++){
-				if(user->getItem(i)->getType()==weaponType){
+			for(int i=0; i < user->getItemsSize();i++){
+				if(user->getItem(i)->getItemType()==weaponType){
 					damage=damage*1.5;
 					break;
 				}
@@ -54,27 +58,27 @@ class Attack{
 			}
 			double admittance=(rand()%15+85)/100;
 			damage=damage*admittance;
-			target->SetBattleHealth( target->getBattleHealth()-damage);//deals actual damage
+			target->setBattleHealth( target->getBattleHealth()-damage);//deals actual damage
 			cout<<target->getName()<<" took "<<damage<< "damage!"<<endl;
 			return damage;
 		}	
 		void statChange(int stat, int stage){
-			if(int stage<0){
+			if( stage<0){
 				if(target->getStage(stat-1)<=-6){
 					return;}
 				else if(target->getStage(stat-1)+stage>=-6){
 					while(target->getStage(stat-1)+stage>-6){
 						stage++;
 					}
-					target->setStat(stat-1,target->getStat()*stage*3/2);
+					target->setStat(stat-1,target->getStat(stat-1)*stage*3/2);
 					target->setStage(stat-1,6);
 				}
 				else{
-					target->setStat(stat-1,target->getStat()*stage*3/2);
-					target->setStage(stat-1,target->getStage()+stage);
+					target->setStat(stat-1,target->getStat(stat-1)*stage*3/2);
+					target->setStage(stat-1,target->getStage(stat-1)+stage);
 				}
 			}
-			if(int stage>0){
+			if( stage>0){
 				if(user->getStage(stat-1)>=6){
 					return;
 				}
@@ -82,12 +86,12 @@ class Attack{
 				while (user->getStage(stat-1)+stage>6){
 					stage--;
 				}
-				user->setStat(stat-1,user->getStat()*stage*3/2);
+				user->setStat(stat-1,user->getStat(stat-1)*stage*3/2);
 				user->setStage(stat-1,6);
 			}
 			else{
-			 	user->setStat(stat-1,user->getStat()*stage*3/2);
-                         	user->setStage(stat-1,user->getStage()+stage);
+			 	user->setStat(stat-1,user->getStat(stat-1)*stage*3/2);
+                         	user->setStage(stat-1,user->getStage(stat-1)+stage);
 			}}
 		}
 			
@@ -100,7 +104,7 @@ class Attack{
 			statusMessage[4]="poisoned";
 			statusMessage[5]="burned";
 			statusMessage[6]="cursed";
-			if(target->getStatusAilment()==0){
+			if(target->getStatus()!=0){
 				return;
 			}
 			else{

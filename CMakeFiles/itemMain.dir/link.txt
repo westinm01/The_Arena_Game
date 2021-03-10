@@ -1,0 +1,1 @@
+/usr/bin/c++    -rdynamic CMakeFiles/itemMain.dir/itemMain.cpp.o  -o itemMain 

@@ -1,0 +1,549 @@
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: /home/csmajs/wmont012/final-project-bmcgh001-mghor004-wmont012/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_972df/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_972df.dir/build.make CMakeFiles/cmTC_972df.dir/build
+gmake[1]: Entering directory `/home/csmajs/wmont012/final-project-bmcgh001-mghor004-wmont012/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_972df.dir/src.c.o
+/usr/bin/cc   -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_972df.dir/src.c.o   -c /home/csmajs/wmont012/final-project-bmcgh001-mghor004-wmont012/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_972df
+/usr/bin/cmake3 -E cmake_link_script CMakeFiles/cmTC_972df.dir/link.txt --verbose=1
+/usr/bin/cc  -DCMAKE_HAVE_LIBC_PTHREAD    -rdynamic CMakeFiles/cmTC_972df.dir/src.c.o  -o cmTC_972df 
+CMakeFiles/cmTC_972df.dir/src.c.o: In function `main':
+src.c:(.text+0x2d): undefined reference to `pthread_create'
+src.c:(.text+0x39): undefined reference to `pthread_detach'
+src.c:(.text+0x45): undefined reference to `pthread_cancel'
+src.c:(.text+0x56): undefined reference to `pthread_join'
+src.c:(.text+0x6a): undefined reference to `pthread_atfork'
+collect2: error: ld returned 1 exit status
+gmake[1]: *** [cmTC_972df] Error 1
+gmake[1]: Leaving directory `/home/csmajs/wmont012/final-project-bmcgh001-mghor004-wmont012/CMakeFiles/CMakeTmp'
+gmake: *** [cmTC_972df/fast] Error 2
+
+
+Source file was:
+#include <pthread.h>
+
+void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_cancel(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/csmajs/wmont012/final-project-bmcgh001-mghor004-wmont012/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_49c54/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_49c54.dir/build.make CMakeFiles/cmTC_49c54.dir/build
+gmake[1]: Entering directory `/home/csmajs/wmont012/final-project-bmcgh001-mghor004-wmont012/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_49c54.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_49c54.dir/CheckFunctionExists.c.o   -c /usr/share/cmake3/Modules/CheckFunctionExists.c
+Linking C executable cmTC_49c54
+/usr/bin/cmake3 -E cmake_link_script CMakeFiles/cmTC_49c54.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_49c54.dir/CheckFunctionExists.c.o  -o cmTC_49c54  -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+gmake[1]: *** [cmTC_49c54] Error 1
+gmake[1]: Leaving directory `/home/csmajs/wmont012/final-project-bmcgh001-mghor004-wmont012/CMakeFiles/CMakeTmp'
+gmake: *** [cmTC_49c54/fast] Error 2
+
+
+
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: /home/csmajs/wmont012/final-project-bmcgh001-mghor004-wmont012/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_41d95/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_41d95.dir/build.make CMakeFiles/cmTC_41d95.dir/build
+gmake[1]: Entering directory `/home/csmajs/wmont012/final-project-bmcgh001-mghor004-wmont012/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_41d95.dir/src.c.o
+/usr/bin/cc   -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_41d95.dir/src.c.o   -c /home/csmajs/wmont012/final-project-bmcgh001-mghor004-wmont012/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_41d95
+/usr/bin/cmake3 -E cmake_link_script CMakeFiles/cmTC_41d95.dir/link.txt --verbose=1
+/usr/bin/cc  -DCMAKE_HAVE_LIBC_PTHREAD    -rdynamic CMakeFiles/cmTC_41d95.dir/src.c.o  -o cmTC_41d95 
+CMakeFiles/cmTC_41d95.dir/src.c.o: In function `main':
+src.c:(.text+0x2d): undefined reference to `pthread_create'
+src.c:(.text+0x39): undefined reference to `pthread_detach'
+src.c:(.text+0x45): undefined reference to `pthread_cancel'
+src.c:(.text+0x56): undefined reference to `pthread_join'
+src.c:(.text+0x6a): undefined reference to `pthread_atfork'
+collect2: error: ld returned 1 exit status
+gmake[1]: *** [cmTC_41d95] Error 1
+gmake[1]: Leaving directory `/home/csmajs/wmont012/final-project-bmcgh001-mghor004-wmont012/CMakeFiles/CMakeTmp'
+gmake: *** [cmTC_41d95/fast] Error 2
+
+
+Source file was:
+#include <pthread.h>
+
+void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_cancel(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/csmajs/wmont012/final-project-bmcgh001-mghor004-wmont012/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_8f6df/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_8f6df.dir/build.make CMakeFiles/cmTC_8f6df.dir/build
+gmake[1]: Entering directory `/home/csmajs/wmont012/final-project-bmcgh001-mghor004-wmont012/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_8f6df.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_8f6df.dir/CheckFunctionExists.c.o   -c /usr/share/cmake3/Modules/CheckFunctionExists.c
+Linking C executable cmTC_8f6df
+/usr/bin/cmake3 -E cmake_link_script CMakeFiles/cmTC_8f6df.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_8f6df.dir/CheckFunctionExists.c.o  -o cmTC_8f6df  -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+gmake[1]: *** [cmTC_8f6df] Error 1
+gmake[1]: Leaving directory `/home/csmajs/wmont012/final-project-bmcgh001-mghor004-wmont012/CMakeFiles/CMakeTmp'
+gmake: *** [cmTC_8f6df/fast] Error 2
+
+
+
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: /home/csmajs/wmont012/final-project-bmcgh001-mghor004-wmont012/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_1e1f0/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_1e1f0.dir/build.make CMakeFiles/cmTC_1e1f0.dir/build
+gmake[1]: Entering directory `/home/csmajs/wmont012/final-project-bmcgh001-mghor004-wmont012/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_1e1f0.dir/src.c.o
+/usr/bin/cc   -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_1e1f0.dir/src.c.o   -c /home/csmajs/wmont012/final-project-bmcgh001-mghor004-wmont012/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_1e1f0
+/usr/bin/cmake3 -E cmake_link_script CMakeFiles/cmTC_1e1f0.dir/link.txt --verbose=1
+/usr/bin/cc  -DCMAKE_HAVE_LIBC_PTHREAD    -rdynamic CMakeFiles/cmTC_1e1f0.dir/src.c.o  -o cmTC_1e1f0 
+CMakeFiles/cmTC_1e1f0.dir/src.c.o: In function `main':
+src.c:(.text+0x2d): undefined reference to `pthread_create'
+src.c:(.text+0x39): undefined reference to `pthread_detach'
+src.c:(.text+0x45): undefined reference to `pthread_cancel'
+src.c:(.text+0x56): undefined reference to `pthread_join'
+src.c:(.text+0x6a): undefined reference to `pthread_atfork'
+collect2: error: ld returned 1 exit status
+gmake[1]: *** [cmTC_1e1f0] Error 1
+gmake[1]: Leaving directory `/home/csmajs/wmont012/final-project-bmcgh001-mghor004-wmont012/CMakeFiles/CMakeTmp'
+gmake: *** [cmTC_1e1f0/fast] Error 2
+
+
+Source file was:
+#include <pthread.h>
+
+void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_cancel(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/csmajs/wmont012/final-project-bmcgh001-mghor004-wmont012/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_8cea4/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_8cea4.dir/build.make CMakeFiles/cmTC_8cea4.dir/build
+gmake[1]: Entering directory `/home/csmajs/wmont012/final-project-bmcgh001-mghor004-wmont012/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_8cea4.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_8cea4.dir/CheckFunctionExists.c.o   -c /usr/share/cmake3/Modules/CheckFunctionExists.c
+Linking C executable cmTC_8cea4
+/usr/bin/cmake3 -E cmake_link_script CMakeFiles/cmTC_8cea4.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_8cea4.dir/CheckFunctionExists.c.o  -o cmTC_8cea4  -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+gmake[1]: *** [cmTC_8cea4] Error 1
+gmake[1]: Leaving directory `/home/csmajs/wmont012/final-project-bmcgh001-mghor004-wmont012/CMakeFiles/CMakeTmp'
+gmake: *** [cmTC_8cea4/fast] Error 2
+
+
+
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: /home/csmajs/wmont012/final-project-bmcgh001-mghor004-wmont012/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_12a86/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_12a86.dir/build.make CMakeFiles/cmTC_12a86.dir/build
+gmake[1]: Entering directory `/home/csmajs/wmont012/final-project-bmcgh001-mghor004-wmont012/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_12a86.dir/src.c.o
+/usr/bin/cc   -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_12a86.dir/src.c.o   -c /home/csmajs/wmont012/final-project-bmcgh001-mghor004-wmont012/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_12a86
+/usr/bin/cmake3 -E cmake_link_script CMakeFiles/cmTC_12a86.dir/link.txt --verbose=1
+/usr/bin/cc  -DCMAKE_HAVE_LIBC_PTHREAD    -rdynamic CMakeFiles/cmTC_12a86.dir/src.c.o  -o cmTC_12a86 
+CMakeFiles/cmTC_12a86.dir/src.c.o: In function `main':
+src.c:(.text+0x2d): undefined reference to `pthread_create'
+src.c:(.text+0x39): undefined reference to `pthread_detach'
+src.c:(.text+0x45): undefined reference to `pthread_cancel'
+src.c:(.text+0x56): undefined reference to `pthread_join'
+src.c:(.text+0x6a): undefined reference to `pthread_atfork'
+collect2: error: ld returned 1 exit status
+gmake[1]: *** [cmTC_12a86] Error 1
+gmake[1]: Leaving directory `/home/csmajs/wmont012/final-project-bmcgh001-mghor004-wmont012/CMakeFiles/CMakeTmp'
+gmake: *** [cmTC_12a86/fast] Error 2
+
+
+Source file was:
+#include <pthread.h>
+
+void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_cancel(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/csmajs/wmont012/final-project-bmcgh001-mghor004-wmont012/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_b6fe8/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_b6fe8.dir/build.make CMakeFiles/cmTC_b6fe8.dir/build
+gmake[1]: Entering directory `/home/csmajs/wmont012/final-project-bmcgh001-mghor004-wmont012/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_b6fe8.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_b6fe8.dir/CheckFunctionExists.c.o   -c /usr/share/cmake3/Modules/CheckFunctionExists.c
+Linking C executable cmTC_b6fe8
+/usr/bin/cmake3 -E cmake_link_script CMakeFiles/cmTC_b6fe8.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_b6fe8.dir/CheckFunctionExists.c.o  -o cmTC_b6fe8  -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+gmake[1]: *** [cmTC_b6fe8] Error 1
+gmake[1]: Leaving directory `/home/csmajs/wmont012/final-project-bmcgh001-mghor004-wmont012/CMakeFiles/CMakeTmp'
+gmake: *** [cmTC_b6fe8/fast] Error 2
+
+
+
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: /home/csmajs/wmont012/final-project-bmcgh001-mghor004-wmont012/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_9a97b/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_9a97b.dir/build.make CMakeFiles/cmTC_9a97b.dir/build
+gmake[1]: Entering directory `/home/csmajs/wmont012/final-project-bmcgh001-mghor004-wmont012/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_9a97b.dir/src.c.o
+/usr/bin/cc   -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_9a97b.dir/src.c.o   -c /home/csmajs/wmont012/final-project-bmcgh001-mghor004-wmont012/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_9a97b
+/usr/bin/cmake3 -E cmake_link_script CMakeFiles/cmTC_9a97b.dir/link.txt --verbose=1
+/usr/bin/cc  -DCMAKE_HAVE_LIBC_PTHREAD    -rdynamic CMakeFiles/cmTC_9a97b.dir/src.c.o  -o cmTC_9a97b 
+CMakeFiles/cmTC_9a97b.dir/src.c.o: In function `main':
+src.c:(.text+0x2d): undefined reference to `pthread_create'
+src.c:(.text+0x39): undefined reference to `pthread_detach'
+src.c:(.text+0x45): undefined reference to `pthread_cancel'
+src.c:(.text+0x56): undefined reference to `pthread_join'
+src.c:(.text+0x6a): undefined reference to `pthread_atfork'
+collect2: error: ld returned 1 exit status
+gmake[1]: *** [cmTC_9a97b] Error 1
+gmake[1]: Leaving directory `/home/csmajs/wmont012/final-project-bmcgh001-mghor004-wmont012/CMakeFiles/CMakeTmp'
+gmake: *** [cmTC_9a97b/fast] Error 2
+
+
+Source file was:
+#include <pthread.h>
+
+void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_cancel(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/csmajs/wmont012/final-project-bmcgh001-mghor004-wmont012/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_f00cb/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_f00cb.dir/build.make CMakeFiles/cmTC_f00cb.dir/build
+gmake[1]: Entering directory `/home/csmajs/wmont012/final-project-bmcgh001-mghor004-wmont012/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_f00cb.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_f00cb.dir/CheckFunctionExists.c.o   -c /usr/share/cmake3/Modules/CheckFunctionExists.c
+Linking C executable cmTC_f00cb
+/usr/bin/cmake3 -E cmake_link_script CMakeFiles/cmTC_f00cb.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_f00cb.dir/CheckFunctionExists.c.o  -o cmTC_f00cb  -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+gmake[1]: *** [cmTC_f00cb] Error 1
+gmake[1]: Leaving directory `/home/csmajs/wmont012/final-project-bmcgh001-mghor004-wmont012/CMakeFiles/CMakeTmp'
+gmake: *** [cmTC_f00cb/fast] Error 2
+
+
+
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: /home/csmajs/wmont012/final-project-bmcgh001-mghor004-wmont012/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_13d41/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_13d41.dir/build.make CMakeFiles/cmTC_13d41.dir/build
+gmake[1]: Entering directory `/home/csmajs/wmont012/final-project-bmcgh001-mghor004-wmont012/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_13d41.dir/src.c.o
+/usr/bin/cc   -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_13d41.dir/src.c.o   -c /home/csmajs/wmont012/final-project-bmcgh001-mghor004-wmont012/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_13d41
+/usr/bin/cmake3 -E cmake_link_script CMakeFiles/cmTC_13d41.dir/link.txt --verbose=1
+/usr/bin/cc  -DCMAKE_HAVE_LIBC_PTHREAD    -rdynamic CMakeFiles/cmTC_13d41.dir/src.c.o  -o cmTC_13d41 
+CMakeFiles/cmTC_13d41.dir/src.c.o: In function `main':
+src.c:(.text+0x2d): undefined reference to `pthread_create'
+src.c:(.text+0x39): undefined reference to `pthread_detach'
+src.c:(.text+0x45): undefined reference to `pthread_cancel'
+src.c:(.text+0x56): undefined reference to `pthread_join'
+src.c:(.text+0x6a): undefined reference to `pthread_atfork'
+collect2: error: ld returned 1 exit status
+gmake[1]: *** [cmTC_13d41] Error 1
+gmake[1]: Leaving directory `/home/csmajs/wmont012/final-project-bmcgh001-mghor004-wmont012/CMakeFiles/CMakeTmp'
+gmake: *** [cmTC_13d41/fast] Error 2
+
+
+Source file was:
+#include <pthread.h>
+
+void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_cancel(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/csmajs/wmont012/final-project-bmcgh001-mghor004-wmont012/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_14f19/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_14f19.dir/build.make CMakeFiles/cmTC_14f19.dir/build
+gmake[1]: Entering directory `/home/csmajs/wmont012/final-project-bmcgh001-mghor004-wmont012/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_14f19.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_14f19.dir/CheckFunctionExists.c.o   -c /usr/share/cmake3/Modules/CheckFunctionExists.c
+Linking C executable cmTC_14f19
+/usr/bin/cmake3 -E cmake_link_script CMakeFiles/cmTC_14f19.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_14f19.dir/CheckFunctionExists.c.o  -o cmTC_14f19  -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+gmake[1]: *** [cmTC_14f19] Error 1
+gmake[1]: Leaving directory `/home/csmajs/wmont012/final-project-bmcgh001-mghor004-wmont012/CMakeFiles/CMakeTmp'
+gmake: *** [cmTC_14f19/fast] Error 2
+
+
+
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: /home/csmajs/wmont012/final-project-bmcgh001-mghor004-wmont012/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_26acc/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_26acc.dir/build.make CMakeFiles/cmTC_26acc.dir/build
+gmake[1]: Entering directory `/home/csmajs/wmont012/final-project-bmcgh001-mghor004-wmont012/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_26acc.dir/src.c.o
+/usr/bin/cc   -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_26acc.dir/src.c.o   -c /home/csmajs/wmont012/final-project-bmcgh001-mghor004-wmont012/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_26acc
+/usr/bin/cmake3 -E cmake_link_script CMakeFiles/cmTC_26acc.dir/link.txt --verbose=1
+/usr/bin/cc  -DCMAKE_HAVE_LIBC_PTHREAD    -rdynamic CMakeFiles/cmTC_26acc.dir/src.c.o  -o cmTC_26acc 
+CMakeFiles/cmTC_26acc.dir/src.c.o: In function `main':
+src.c:(.text+0x2d): undefined reference to `pthread_create'
+src.c:(.text+0x39): undefined reference to `pthread_detach'
+src.c:(.text+0x45): undefined reference to `pthread_cancel'
+src.c:(.text+0x56): undefined reference to `pthread_join'
+src.c:(.text+0x6a): undefined reference to `pthread_atfork'
+collect2: error: ld returned 1 exit status
+gmake[1]: *** [cmTC_26acc] Error 1
+gmake[1]: Leaving directory `/home/csmajs/wmont012/final-project-bmcgh001-mghor004-wmont012/CMakeFiles/CMakeTmp'
+gmake: *** [cmTC_26acc/fast] Error 2
+
+
+Source file was:
+#include <pthread.h>
+
+void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_cancel(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/csmajs/wmont012/final-project-bmcgh001-mghor004-wmont012/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_64cb7/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_64cb7.dir/build.make CMakeFiles/cmTC_64cb7.dir/build
+gmake[1]: Entering directory `/home/csmajs/wmont012/final-project-bmcgh001-mghor004-wmont012/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_64cb7.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_64cb7.dir/CheckFunctionExists.c.o   -c /usr/share/cmake3/Modules/CheckFunctionExists.c
+Linking C executable cmTC_64cb7
+/usr/bin/cmake3 -E cmake_link_script CMakeFiles/cmTC_64cb7.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_64cb7.dir/CheckFunctionExists.c.o  -o cmTC_64cb7  -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+gmake[1]: *** [cmTC_64cb7] Error 1
+gmake[1]: Leaving directory `/home/csmajs/wmont012/final-project-bmcgh001-mghor004-wmont012/CMakeFiles/CMakeTmp'
+gmake: *** [cmTC_64cb7/fast] Error 2
+
+
+
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: /home/csmajs/wmont012/final-project-bmcgh001-mghor004-wmont012/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_0c9c5/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_0c9c5.dir/build.make CMakeFiles/cmTC_0c9c5.dir/build
+gmake[1]: Entering directory `/home/csmajs/wmont012/final-project-bmcgh001-mghor004-wmont012/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_0c9c5.dir/src.c.o
+/usr/bin/cc   -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_0c9c5.dir/src.c.o   -c /home/csmajs/wmont012/final-project-bmcgh001-mghor004-wmont012/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_0c9c5
+/usr/bin/cmake3 -E cmake_link_script CMakeFiles/cmTC_0c9c5.dir/link.txt --verbose=1
+/usr/bin/cc  -DCMAKE_HAVE_LIBC_PTHREAD    -rdynamic CMakeFiles/cmTC_0c9c5.dir/src.c.o  -o cmTC_0c9c5 
+CMakeFiles/cmTC_0c9c5.dir/src.c.o: In function `main':
+src.c:(.text+0x2d): undefined reference to `pthread_create'
+src.c:(.text+0x39): undefined reference to `pthread_detach'
+src.c:(.text+0x45): undefined reference to `pthread_cancel'
+src.c:(.text+0x56): undefined reference to `pthread_join'
+src.c:(.text+0x6a): undefined reference to `pthread_atfork'
+collect2: error: ld returned 1 exit status
+gmake[1]: *** [cmTC_0c9c5] Error 1
+gmake[1]: Leaving directory `/home/csmajs/wmont012/final-project-bmcgh001-mghor004-wmont012/CMakeFiles/CMakeTmp'
+gmake: *** [cmTC_0c9c5/fast] Error 2
+
+
+Source file was:
+#include <pthread.h>
+
+void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_cancel(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/csmajs/wmont012/final-project-bmcgh001-mghor004-wmont012/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_d0616/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_d0616.dir/build.make CMakeFiles/cmTC_d0616.dir/build
+gmake[1]: Entering directory `/home/csmajs/wmont012/final-project-bmcgh001-mghor004-wmont012/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_d0616.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_d0616.dir/CheckFunctionExists.c.o   -c /usr/share/cmake3/Modules/CheckFunctionExists.c
+Linking C executable cmTC_d0616
+/usr/bin/cmake3 -E cmake_link_script CMakeFiles/cmTC_d0616.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_d0616.dir/CheckFunctionExists.c.o  -o cmTC_d0616  -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+gmake[1]: *** [cmTC_d0616] Error 1
+gmake[1]: Leaving directory `/home/csmajs/wmont012/final-project-bmcgh001-mghor004-wmont012/CMakeFiles/CMakeTmp'
+gmake: *** [cmTC_d0616/fast] Error 2
+
+
+
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: /home/csmajs/wmont012/final-project-bmcgh001-mghor004-wmont012/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_d74cd/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_d74cd.dir/build.make CMakeFiles/cmTC_d74cd.dir/build
+gmake[1]: Entering directory `/home/csmajs/wmont012/final-project-bmcgh001-mghor004-wmont012/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_d74cd.dir/src.c.o
+/usr/bin/cc   -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_d74cd.dir/src.c.o   -c /home/csmajs/wmont012/final-project-bmcgh001-mghor004-wmont012/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_d74cd
+/usr/bin/cmake3 -E cmake_link_script CMakeFiles/cmTC_d74cd.dir/link.txt --verbose=1
+/usr/bin/cc  -DCMAKE_HAVE_LIBC_PTHREAD    -rdynamic CMakeFiles/cmTC_d74cd.dir/src.c.o  -o cmTC_d74cd 
+CMakeFiles/cmTC_d74cd.dir/src.c.o: In function `main':
+src.c:(.text+0x2d): undefined reference to `pthread_create'
+src.c:(.text+0x39): undefined reference to `pthread_detach'
+src.c:(.text+0x45): undefined reference to `pthread_cancel'
+src.c:(.text+0x56): undefined reference to `pthread_join'
+src.c:(.text+0x6a): undefined reference to `pthread_atfork'
+collect2: error: ld returned 1 exit status
+gmake[1]: *** [cmTC_d74cd] Error 1
+gmake[1]: Leaving directory `/home/csmajs/wmont012/final-project-bmcgh001-mghor004-wmont012/CMakeFiles/CMakeTmp'
+gmake: *** [cmTC_d74cd/fast] Error 2
+
+
+Source file was:
+#include <pthread.h>
+
+void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_cancel(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/csmajs/wmont012/final-project-bmcgh001-mghor004-wmont012/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_e871a/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_e871a.dir/build.make CMakeFiles/cmTC_e871a.dir/build
+gmake[1]: Entering directory `/home/csmajs/wmont012/final-project-bmcgh001-mghor004-wmont012/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_e871a.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_e871a.dir/CheckFunctionExists.c.o   -c /usr/share/cmake3/Modules/CheckFunctionExists.c
+Linking C executable cmTC_e871a
+/usr/bin/cmake3 -E cmake_link_script CMakeFiles/cmTC_e871a.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_e871a.dir/CheckFunctionExists.c.o  -o cmTC_e871a  -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+gmake[1]: *** [cmTC_e871a] Error 1
+gmake[1]: Leaving directory `/home/csmajs/wmont012/final-project-bmcgh001-mghor004-wmont012/CMakeFiles/CMakeTmp'
+gmake: *** [cmTC_e871a/fast] Error 2
+
+
+

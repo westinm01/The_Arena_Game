@@ -9,7 +9,7 @@
 
 using namespace std;
 
-class Character;
+//class Character;
 class Item{
 	protected:
 		std::string name;

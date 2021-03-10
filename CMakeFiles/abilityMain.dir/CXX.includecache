@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/csmajs/wmont012/final-project-bmcgh001-mghor004-wmont012/AbilityItem/ability.hpp
+iostream
+-
+string
+-
+
+/home/csmajs/wmont012/final-project-bmcgh001-mghor004-wmont012/abilityMain.cpp
+AbilityItem/ability.hpp
+/home/csmajs/wmont012/final-project-bmcgh001-mghor004-wmont012/AbilityItem/ability.hpp
+iostream
+-
+string
+-
+

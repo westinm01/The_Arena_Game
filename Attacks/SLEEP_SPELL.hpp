@@ -13,8 +13,8 @@ class SleepSpell:public Attack{
                 }
                 virtual void attackBehavior(){
                         inflictStatusAilment(3,50);
-			if(getTarget()->getStatus!=3){
-				changeStat(5,-1);
+			if(getTarget()->getStatus()!=3){
+				statChange(5,-1);
 			}
                 }
 };

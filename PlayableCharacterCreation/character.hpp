@@ -10,7 +10,7 @@
 #include "../AbilityItem/item.hpp"
 
 //#include "../Attacks/attack.hpp"
-
+class Attack;
 using namespace std;
 
 class Character{
@@ -27,13 +27,16 @@ class Character{
 
 	//vector <Attack*> attacks;
 	//Ability uniqueAbility;
-
+	int stages [6];
 	int statusAilment;
 	bool holdingItem = false;
 	const char* imageFilePath;
 	public:
 	Character(){
 		rank=1;
+		for(int i: stages){
+			i=0;
+		}
 	}
 	void setBaseStats(int atk, int def, int spatk, int spdef,int spd, int hp){
 		baseStats[0]=atk;
@@ -65,6 +68,9 @@ class Character{
 			cout << "You've reached max # of items!" << endl;
 		}
 	}
+	int getItemsSize(){
+		return equippedItems.size();
+	}
 	void setName(string specifiedName){
 		name=specifiedName;
 	}
@@ -78,8 +84,14 @@ class Character{
 	void setBattleHealth(int hp){
 		health=hp;
 	}
-	int getBattleHealth(int hp){
+	int getBattleHealth(){
 		return health;
+	}
+	void setStage(int stat, int stage){
+		stages[stat]=stage+stages[stat];
+	}
+	int getStage(int stat){
+		return stages[stat];
 	}
 	void setStatusAilment(int ailment){
 		statusAilment=ailment;
@@ -188,10 +200,13 @@ class Character{
 	void showAbility(){
 		cout << "Name: " << uniqueAbility->getName() << endl;
 		cout << "Description: " << uniqueAbility->getDescription() << endl;
-
+	}
 	int getStat(int stat){
 		return stat;
 
+	}
+	int getStatus(){
+		return statusAilment;
 	}
 	virtual void display()=0;
 	
