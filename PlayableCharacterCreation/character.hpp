@@ -29,8 +29,10 @@ class Character{
 	//Ability uniqueAbility;
 
 	int statusAilment;
-	bool holdingItem = false;
+	Item* hand;
+	bool holdingItem;
 	const char* imageFilePath;
+	int money = 0;
 	public:
 	Character(){
 		rank=1;
@@ -96,39 +98,48 @@ class Character{
 	void setAbility(Ability* a){
 		uniqueAbility = a;
 	}
+	void setMoney(int gold){
+		money = gold;
+	}
+	bool isHolding(){
+		return holdingItem;
+	}
 
 	void equipItem(int choice){
 		int index = choice - 1;
-		if(holdingItem != true){
+		
 			if(equippedItems.size() != 0){
 				Item* item = equippedItems.at(index);
 					for (int i = 0; i < item->effect.size(); i++){
 						int location = item->effect.at(i).first;
 						int change = baseStats[location] + item->effect.at(i).second;
 						setStat(location, change);
-					
+						hand = equippedItems.at(index);
 					}
 					holdingItem = true;
+					cout << "Equipped " << item->getName() << endl;
 			} else {
 				cout << "You have no items to equip!" << endl;
-			}
+			
 		}
 	}
 	
 	void unequipItem(int choice){
 		int index = choice - 1;
-		if(holdingItem == true){
+		
 			if(equippedItems.size() != 0){
 				Item* item = equippedItems.at(index);
 					for(int i = 0; i < item->effect.size(); i++){
 						int location = item->effect.at(i).first;
 						int change = baseStats[location] - item->effect.at(i).second;
 						setStat(location, change);
+						hand = NULL;
 					}
 				holdingItem = false;
 				cout << "Unequipped " <<  item->getName() << endl;
+				cout << endl;
 			}
-		}
+		
 	}
 
 	void deleteItem(int choice){
@@ -136,6 +147,7 @@ class Character{
 			if(equippedItems.size() != 0) {
 				cout << "You have dropped the " << equippedItems.at(index)->getName() << "." << endl;
 				equippedItems.erase(equippedItems.begin() + index);
+				cout << endl;
 			}
 	} 	
 
@@ -145,6 +157,9 @@ class Character{
 	}
 	int getRank(){
 		return rank;
+	}
+	int getMoney(){
+		return money;
 	}
 	string getFightStyle(){
 		return fightStyle;
@@ -177,11 +192,20 @@ class Character{
 	Item* getItem(int num){
 		return equippedItems.at(num - 1);
 	}
-
+	Item* getHand(){
+		return hand;
+	}
+	vector<Item*> getItems(){
+		return equippedItems;
+	}
 	void showItems(){
-		for (int i = 0; i < equippedItems.size(); i++){
-			Item* stash = equippedItems.at(i);
-			cout << i + 1 << ". " << stash->getName() << endl;
+		if(equippedItems.size() != 0){
+			for (int i = 0; i < equippedItems.size(); i++){
+				Item* stash = equippedItems.at(i);
+				cout << i + 1 << ". " << stash->getName() << endl;
+			}
+		}else{
+			cout << "You have no items in your inventory!" << endl;
 		}
 	}
 
