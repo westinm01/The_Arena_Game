@@ -22,7 +22,8 @@ void MainMenu::retrieveInput() {
 //        inventory();
     }
     if (choice == "2") {
-//        character();
+        mc->characterMenu->printMenu();
+	mc->characterMenu->retrieveInput();
     }
     if (choice == "3") {
 //        shop();

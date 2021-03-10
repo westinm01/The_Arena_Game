@@ -4,6 +4,7 @@
 #include "MenuController.h"
 #include "Settings.cpp"
 #include "MainMenu.cpp"
+#include "CharacterMenu.cpp"
 
 using namespace std;
 

@@ -3,14 +3,17 @@
 
 #include "MainMenu.h"
 #include "Settings.h"
+#include "CharacterMenu.h"
 
 class MenuController {
 public:
-    MainMenu* mainMenu = new MainMenu(this);
+    MainMenu* mainMenu = new MainMenu(this); 
     Settings* settings = new Settings(this);
+    CharacterMenu* characterMenu = new CharacterMenu(this);
     ~MenuController(){
 	delete mainMenu;
 	delete settings;
+	delete characterMenu;
     }  
 };
 
