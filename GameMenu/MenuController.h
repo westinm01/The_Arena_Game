@@ -10,6 +10,8 @@ public:
     MainMenu* mainMenu = new MainMenu(this); 
     Settings* settings = new Settings(this);
     CharacterMenu* characterMenu = new CharacterMenu(this);
+    
+
     ~MenuController(){
 	delete mainMenu;
 	delete settings;
