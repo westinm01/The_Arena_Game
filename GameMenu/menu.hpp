@@ -13,39 +13,41 @@ public:
     virtual void retrieveInput() = 0;
 };
 
+class MainMenu;
 class Settings : public Menu{
 public:
    Settings() {}
-
-   virtual void printMenu(){
+   Menu* main = new MainMenu();
+        virtual void printMenu(){
         cout << "-= Settings =-" << endl;
         cout << "1. Difficulty" << endl;
         cout << "2. Back" << endl;
     }
    virtual void retrieveInput(){
-	/*string choice;
+	string choice;
 	cin >> choice;
 	if (choice == "1"){
             //hardness();
             cout << "hardness" << endl;  //DELETE LATER
       }
         if (choice == "2"){
-           //back();
-           cout << "back" << endl;  //DELETE LATER
-      }*/
+	   //back();
+           main->printMenu();
+//	   main->retrieveInput();
+      }
    }
 };
 
 
 class MainMenu : public Menu{
 public:
-    vector <Menu*> menuChoices;
+//    vector <Menu*> menuChoices;
     Settings* setting = new Settings();
     MainMenu(){
 	//menuChoices.push_back(Menu* inventory);
 	//menuChoices.push_back(Menu* character);
 	//menuChoices.push_back(Menu* shop);
-	menuChoices.push_back(setting);
+//	menuChoices.push_back(setting);
     } 
     virtual void printMenu(){
 	cout << "-= Main Menu =-" << endl;
@@ -70,7 +72,7 @@ public:
 	} */
 	if (choice == "4") {
 	    setting->printMenu();
-  	    //setting->retrieveInput();
+  	    setting->retrieveInput();
 	}
 	//if (choice == "5") {
 	    //quitGame();
