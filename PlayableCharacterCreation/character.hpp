@@ -95,6 +95,9 @@ class Character{
 	
 	void setBattleHealth(int hp){
 		health=hp;
+		if(health<0){
+			health=0;
+		}
 	}
 	int getBattleHealth(){
 		return health;
