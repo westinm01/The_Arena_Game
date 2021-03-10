@@ -3,12 +3,14 @@
 #include <iostream> 
 using namespace std; 
 
+class Character;
 class MainMenu {
 public:
     class MenuController* mc;
     MainMenu(MenuController* _mc);
+  
     void printMenu();
-    void retrieveInput();
+    void retrieveInput(Character* c);
 };
 
 #endif

@@ -3,6 +3,7 @@
 
 #include "../DatabaseCreation/database.hpp"
 #include "../PlayableCharacterCreation/character.hpp"
+//#include "../GameMenu/MenuController.h"
 #include <iostream>
 #include <string>
 #include <vector>
@@ -11,8 +12,12 @@ class Shop{
 
 	Database data;
 	public:
+		class MenuController* mc;
+	
 		Shop() {}
-
+		Shop(MenuController* _mc){
+			mc = _mc;
+		}
 		
 
 		void printMenu(){
@@ -34,14 +39,16 @@ class Shop{
 			cout << endl;
 
 			if (choice == 0){
-			
+				mc->mainMenu->printMenu();
+				mc->mainMenu->retrieveInput(c);
 			}
 
 			if(choice == 1){
 				int choice2;
 			
-					cout << "Note: Certain items will become purchaseable after ranking up." << endl;
+					/*cout << "Note: Certain items will become purchaseable after ranking up." << endl;
 					cout << "Your current rank is " << c->getRank() << "." << endl;
+					*/
 					cout << "You have " << c->getMoney() << " gold." << endl;
 					cout << endl;
 					data.fill_database();

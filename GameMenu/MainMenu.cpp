@@ -15,22 +15,21 @@ void MainMenu::printMenu() {
     cout << "5. Quit Game" << endl;
 }
 
-void MainMenu::retrieveInput() {
+void MainMenu::retrieveInput(Character* c) {
     string choice;
     cin >> choice;
     if (choice == "1") {
-//        inventory();
+	mc->inventory->menuFunc(c);
     }
     if (choice == "2") {
-        mc->characterMenu->printMenu();
-	mc->characterMenu->retrieveInput();
+	mc->characterMenu->retrieveInput(c);
     }
     if (choice == "3") {
-//        shop();
+	mc->shop->retrieveInput(c);
     }
     if (choice == "4") {
         mc->settings->printMenu();
-        mc->settings->retrieveInput();
+        mc->settings->retrieveInput(c);
     }
     if (choice == "5") {
         return;
