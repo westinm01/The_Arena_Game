@@ -64,16 +64,16 @@ RM = /usr/bin/cmake3 -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/csmajs/wmont012/final-project-bmcgh001-mghor004-wmont012
+CMAKE_SOURCE_DIR = /home/csmajs/mghor004/final-project-bmcgh001-mghor004-wmont012
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/csmajs/wmont012/final-project-bmcgh001-mghor004-wmont012
+CMAKE_BINARY_DIR = /home/csmajs/mghor004/final-project-bmcgh001-mghor004-wmont012
 
 #=============================================================================
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/databaseTest.dir/all
+all: CMakeFiles/menuTest.dir/all
 
 .PHONY : all
 
@@ -83,36 +83,36 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/databaseTest.dir/clean
+clean: CMakeFiles/menuTest.dir/clean
 
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/databaseTest.dir
+# Target rules for target CMakeFiles/menuTest.dir
 
 # All Build rule for target.
-CMakeFiles/databaseTest.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/databaseTest.dir/build.make CMakeFiles/databaseTest.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/databaseTest.dir/build.make CMakeFiles/databaseTest.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/csmajs/wmont012/final-project-bmcgh001-mghor004-wmont012/CMakeFiles --progress-num=1,2 "Built target databaseTest"
-.PHONY : CMakeFiles/databaseTest.dir/all
+CMakeFiles/menuTest.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/menuTest.dir/build.make CMakeFiles/menuTest.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/menuTest.dir/build.make CMakeFiles/menuTest.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/csmajs/mghor004/final-project-bmcgh001-mghor004-wmont012/CMakeFiles --progress-num=1,2 "Built target menuTest"
+.PHONY : CMakeFiles/menuTest.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/databaseTest.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/csmajs/wmont012/final-project-bmcgh001-mghor004-wmont012/CMakeFiles 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/databaseTest.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/csmajs/wmont012/final-project-bmcgh001-mghor004-wmont012/CMakeFiles 0
-.PHONY : CMakeFiles/databaseTest.dir/rule
+CMakeFiles/menuTest.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/csmajs/mghor004/final-project-bmcgh001-mghor004-wmont012/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/menuTest.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/csmajs/mghor004/final-project-bmcgh001-mghor004-wmont012/CMakeFiles 0
+.PHONY : CMakeFiles/menuTest.dir/rule
 
 # Convenience name for target.
-databaseTest: CMakeFiles/databaseTest.dir/rule
+menuTest: CMakeFiles/menuTest.dir/rule
 
-.PHONY : databaseTest
+.PHONY : menuTest
 
 # clean rule for target.
-CMakeFiles/databaseTest.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/databaseTest.dir/build.make CMakeFiles/databaseTest.dir/clean
-.PHONY : CMakeFiles/databaseTest.dir/clean
+CMakeFiles/menuTest.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/menuTest.dir/build.make CMakeFiles/menuTest.dir/clean
+.PHONY : CMakeFiles/menuTest.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.
