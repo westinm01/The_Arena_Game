@@ -65,6 +65,7 @@ class Attack{
 		void statChange(int stat, int stage){
 			if( stage<0){
 				if(target->getStage(stat-1)<=-6){
+					cout<<"It can't go lower!"<<endl;
 					return;}
 				else if(target->getStage(stat-1)+stage>=-6){
 					while(target->getStage(stat-1)+stage>-6){

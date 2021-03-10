@@ -99,6 +99,12 @@ class Character{
 			health=0;
 		}
 	}
+	void setRank(int r){
+		rank=r;
+	}
+	int getHealth(){
+		return baseStats[5]*4;
+	}
 	int getBattleHealth(){
 		return health;
 	}
