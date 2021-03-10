@@ -21,6 +21,7 @@ class Character{
 	//Attack[4]attacks;
 	Ability* uniqueAbility;
 	int statusAilment;
+	bool holdingItem = false;
 	const char* imageFilePath;
 	public:
 	Character(){
@@ -80,28 +81,34 @@ class Character{
 
 	void equipItem(int choice){
 		int index = choice - 1;
-		if(equippedItems.size() != 0){
-			Item* item = equippedItems.at(index);
-				for (int i = 0; i < item->effect.size(); i++){
-					int location = item->effect.at(i).first;
-					int change = baseStats[location] + item->effect.at(i).second;
-					setStat(location, change);
-				}
-		} else {
-			cout << "You have no items to equip!" << endl;
+		if(holdingItem != true){
+			if(equippedItems.size() != 0){
+				Item* item = equippedItems.at(index);
+					for (int i = 0; i < item->effect.size(); i++){
+						int location = item->effect.at(i).first;
+						int change = baseStats[location] + item->effect.at(i).second;
+						setStat(location, change);
+					}
+			} else {
+				cout << "You have no items to equip!" << endl;
+			}
+		} else{
+			cout <<	"You are already holding a weapon... unequip to select a new one." << endl;
 		}
 	}
 	
 	void unequipItem(int choice){
 		int index = choice - 1;
-		if(equippedItems.size() != 0){
-			Item* item = equippedItems.at(index);
-				for(int i = 0; i < item->effect.size(); i++){
-					int location = item->effect.at(i).first;
-					int change = baseStats[location] - item->effect.at(i).second;
-					setStat(location, change);
-				}
-			cout << "Unequipped " <<  item->getName() << endl;
+		if(holdingItem == true){
+			if(equippedItems.size() != 0){
+				Item* item = equippedItems.at(index);
+					for(int i = 0; i < item->effect.size(); i++){
+						int location = item->effect.at(i).first;
+						int change = baseStats[location] - item->effect.at(i).second;
+						setStat(location, change);
+					}
+				cout << "Unequipped " <<  item->getName() << endl;
+			}
 		}
 	}
 
