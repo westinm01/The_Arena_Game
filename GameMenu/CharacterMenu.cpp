@@ -16,7 +16,7 @@ void CharacterMenu::printMenu(){
     //cout << "Image: " ;
     cout << "Rank: " << myCharacter->getRank() << endl;
     cout << "Fight Style: " << myCharacter->getFightStyle() << endl;
-//    cout << "Weapon Stats: " << myCharacter->getWeaponStat(int i) << endl;
+    cout << "Weapon Stats: " << myCharacter->getWeaponStat(2) << endl;
     cout << "Attack: " << myCharacter->getAttack() << endl;
     cout << "Defense: " << myCharacter->getDefense() << endl;
     cout << "Speical Attack: " << myCharacter->getSpecialAttack() << endl;

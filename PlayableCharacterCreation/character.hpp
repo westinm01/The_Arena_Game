@@ -59,8 +59,7 @@ class Character{
 		return imageFilePath; 
 	}
 	string getName(){
-		//return name;
-		return "called getName()";
+		return name;
 	}
 	int getRank(){
 		return rank;
@@ -69,7 +68,7 @@ class Character{
 		return fightStyle;
 	}
 	char getWeaponStat(int i){
-		return weaponStats[i];
+	        return weaponStats[i];
 	}
 	int getAttack(){
 		return baseStats[0];
@@ -79,9 +78,11 @@ class Character{
 	}
 	int getSpecialAttack(){
 		return baseStats[2];
+		
 	}
 	int getSpecialDefense(){
 		return baseStats[3];
+		
 	}
 	int getSpeed(){
 		return baseStats[4];
