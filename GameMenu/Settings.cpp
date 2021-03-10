@@ -13,7 +13,7 @@ void Settings::printMenu() {
     cout << "2. Back" << endl;
 }
 
-void Settings::retrieveInput() {
+void Settings::retrieveInput(Character* c) {
     string choice;
     cin >> choice;
     if (choice == "1") {
@@ -24,7 +24,7 @@ void Settings::retrieveInput() {
         //back();
         cout << "selected back\n";
         mc->mainMenu->printMenu();
-        mc->mainMenu->retrieveInput();
+        mc->mainMenu->retrieveInput(c);
     }
 }
 

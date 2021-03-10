@@ -32,25 +32,10 @@
  >  Class Diagram link: https://drive.google.com/file/d/1LAjs0aT9K9u4edpp5Ky5dcDy5Ojwzrsj/view?usp=sharing
  > Description: There will be a `Character` class, that is decorated with an ability depending on the character, as well as equippable items that alter the `Character`'s stats or affect gameplay. A `Character` has 4 `Attack`s, and these attacks fall into 1 of 3 categories as outlined in the UML. Each attack has a specific funciton, and we found that Strategy Pattern allows us to section off different types of attacks while giving them their unique behavior. There are several states that the game exists in, which are listed out in all available `Menu` classes. `Menu`s can definitely contain other menus, and allow ease of navigation from one menu to another `Menu`. We implemented Strategy Pattern here because all `Menu`s can display, but they all display differently and often with different content. The `Battle` class exists to store data that may trigger abilities in addition to being the flow of gameplay itself.
  
- > ## Phase III
- > You will need to schedule a check-in with the TA (during lab hours or office hours). Your entire team must be present. 
- > * Before the meeting you should perform a sprint plan like you did in Phase II
- > * In the meeting with your TA you will discuss: 
- >   - How effective your last sprint was (each member should talk about what they did)
- >   - Any tasks that did not get completed last sprint, and how you took them into consideration for this sprint
- >   - Any bugs you've identified and created issues for during the sprint. Do you plan on fixing them in the next sprint or are they lower priority?
- >   - What tasks you are planning for this next sprint.
-
- > ## Final deliverable
- > All group members will give a demo to the TA during lab time. The TA will check the demo and the project GitHub repository and ask a few questions to all the team members. 
- > Before the demo, you should do the following:
- > * Complete the sections below (i.e. Screenshots, Installation/Usage, Testing)
- > * Plan one more sprint (that you will not necessarily complete before the end of the quarter). Your In-progress and In-testing columns should be empty (you are not doing more work currently) but your TODO column should have a full sprint plan in it as you have done before. This should include any known bugs (there should be some) or new features you would like to add. These should appear as issues/cards on your Kanban board. 
- 
  ## Screenshots
- > Screenshots of the input/output after running your application
+ > https://drive.google.com/drive/folders/1YKXeeTi2CfFcxo8JIariBhVkjlnzBJ1J?usp=sharing
  ## Installation/Usage
  > Instructions on installing and running your application
  ## Testing
- > How was your project tested/validated? If you used CI, you should have a "build passing" badge in this README.
+ > Testing was conducted using the googletest submodule. We did unit testing for every individual class and a few with some of the classes combined.
  

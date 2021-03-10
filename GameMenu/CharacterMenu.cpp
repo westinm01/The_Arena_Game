@@ -27,13 +27,13 @@ void CharacterMenu::printMenu(){
     cout << "Enter 1 to go back" << endl;
 }
 
-void CharacterMenu::retrieveInput(){
+void CharacterMenu::retrieveInput(Character* c){
     string choice;
     cin >> choice;
 
     if (choice == "1") {
 	mc->mainMenu->printMenu();
-	mc->mainMenu->retrieveInput();
+	mc->mainMenu->retrieveInput(c);
     }
 }
 

@@ -1,5 +1,5 @@
-#ifndef __MENU_MAIN_CPP__
-#define __MENU_MAIN_CPP__
+#ifndef __INVEN_MAIN_CPP__
+#define __INVEN_MAIN_CPP__
 
 #include "AbilityItem/item.hpp"
 #include "PlayableCharacterCreation/character.hpp"

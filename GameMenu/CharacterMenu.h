@@ -4,12 +4,13 @@
 #include <string>
 using namespace std;
 
+class Character;
 class CharacterMenu{
 public:
     class MenuController* mc;
     CharacterMenu(MenuController* _mc);
     void printMenu();
-    void retrieveInput();
+    void retrieveInput(Character* c);
 };
 
 #endif
