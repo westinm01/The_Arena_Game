@@ -36,7 +36,7 @@ class Character{
 		setHealth();
 	}
 	void setStat(int stat, int change){
-		baseStats[stat] = baseStats[stat] + change;
+		baseStats[stat] = change;
 	}
 	void setWeaponStats(char sword, char dagger, char lance, char fists, char nunchuck, char staff, char star, char shield){
 		weaponStats[0]=sword;
@@ -108,7 +108,7 @@ class Character{
 	void deleteItem(int choice){
 		int index = choice - 1;
 			if(equippedItems.size() != 0) {
-				cout << "You have dropped the " << equippedItems.at(index)->getName() << endl;
+				cout << "You have dropped the " << equippedItems.at(index)->getName() << "." << endl;
 				equippedItems.erase(equippedItems.begin() + index);
 			}
 	} 	
