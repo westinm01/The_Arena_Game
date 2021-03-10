@@ -1,4 +1,5 @@
-#pragma once
+#ifndef __MAINMENU_H__
+#define __MAINMENU_H__
 #include <iostream> 
 using namespace std; 
 
@@ -9,3 +10,5 @@ public:
     void printMenu();
     void retrieveInput();
 };
+
+#endif

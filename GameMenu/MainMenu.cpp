@@ -1,3 +1,5 @@
+#ifndef __MAINMENU_CPP__
+#define __MAINMENU_CPP__
 #include "MenuController.h"
 
 MainMenu::MainMenu(MenuController* _mc) {
@@ -33,3 +35,5 @@ void MainMenu::retrieveInput() {
         return;
     }
 }
+
+#endif

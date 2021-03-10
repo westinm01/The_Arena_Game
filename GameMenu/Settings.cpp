@@ -1,3 +1,6 @@
+#ifndef __SETTINGS_CPP__
+#define __SETTINGS_CPP__
+
 #include "MenuController.h"
 
 Settings::Settings(MenuController* _mc) {
@@ -24,3 +27,5 @@ void Settings::retrieveInput() {
         mc->mainMenu->retrieveInput();
     }
 }
+
+#endif

@@ -1,5 +1,9 @@
+#ifndef __MENUMAIN_CPP__
+#define __MENUMAIN_CPP__
 #include <iostream>
 #include "MenuController.h"
+#include "Settings.cpp"
+#include "MainMenu.cpp"
 
 using namespace std;
 
@@ -12,3 +16,5 @@ int main() {
 
     return 0;
 }
+
+#endif
