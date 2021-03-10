@@ -5,15 +5,20 @@
 #include <iostream>
 #include <string>
 #include <vector>
-
+//#include "../GameMenu/MenuController.h"
 using namespace std;
 
 
 class Inventory{
 
-public:   
+public:
+	class MenuController* mc;   
 	Inventory() {}
- 
+ 	
+	Inventory(MenuController* _mc){
+		mc = _mc;
+	}
+
 	void printMenu(Character* c){
 		cout << "-= Inventory =-" << endl;
 		c->showItems(); 
@@ -21,7 +26,7 @@ public:
 		cout << "[Type 0 to go back]" << endl << endl;
 	}   
 
-	virtual void menuFunc(Character* c){
+	void menuFunc(Character* c){
 		int choice;
 		cout << endl;
 		cout << "You currently have " << c->getHand()->getName() << " equipped." << endl;
@@ -33,7 +38,8 @@ public:
 			cout << endl;
 		
 			if(choice == 0){
-				break;
+				mc->mainMenu->printMenu();
+				mc->mainMenu->retrieveInput(c);
 			}
 
 			if(choice > 3){
