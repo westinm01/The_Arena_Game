@@ -3,6 +3,11 @@
 #include <string>
 #include <iostream>
 #include <fstream>
+#include <vector>
+#include <utility>
+#include "../AbilityItem/ability.hpp"
+#include "../AbilityItem/item.hpp"
+
 using namespace std;
 
 class Character{
@@ -11,12 +16,15 @@ class Character{
 	int baseStats[6];
 	char weaponStats[8];
 	int health;
-	//Item[3] equippedItems;
+	vector<Item*>equippedItems;
 	int rank;
 	//Attack[4]attacks;
-	//Ability uniqueAbility;
+	Ability* uniqueAbility;
 	int statusAilment;
+	Item* hand;
+	bool holdingItem;
 	const char* imageFilePath;
+	int money = 0;
 	public:
 	Character(){
 		rank=1;
@@ -28,7 +36,10 @@ class Character{
 		baseStats[3]=spdef;
 		baseStats[4]=spd;
 		baseStats[5]=hp;
-		setHealth(baseStats[5]);
+		setHealth();
+	}
+	void setStat(int stat, int change){
+		baseStats[stat] = change;
 	}
 	void setWeaponStats(char sword, char dagger, char lance, char fists, char nunchuck, char staff, char star, char shield){
 		weaponStats[0]=sword;
@@ -40,11 +51,25 @@ class Character{
 		weaponStats[6]=star;
 		weaponStats[7]=shield;
 	}
+	
+	void addItem(Item* i){
+		if(equippedItems.size() != 3){
+			equippedItems.push_back(i);
+		} else {
+			cout << "You've reached max # of items!" << endl;
+		}
+	}
 	void setName(string specifiedName){
 		name=specifiedName;
 	}
-	void setHealth(int hp){
-		health=hp*4;
+	void setHealth(){
+		health= baseStats[5]*4;
+	}
+	void setBattleHealth(int hp){
+		health=hp;
+	}
+	int getBattleHealth(int hp){
+		return health;
 	}
 	void setStatusAilment(int ailment){
 		statusAilment=ailment;
@@ -58,11 +83,71 @@ class Character{
 	const char* getImageFilePath(){
 		return imageFilePath; 
 	}
+	void setAbility(Ability* a){
+		uniqueAbility = a;
+	}
+	void setMoney(int gold){
+		money = gold;
+	}
+	bool isHolding(){
+		return holdingItem;
+	}
+
+	void equipItem(int choice){
+		int index = choice - 1;
+		
+			if(equippedItems.size() != 0){
+				Item* item = equippedItems.at(index);
+					for (int i = 0; i < item->effect.size(); i++){
+						int location = item->effect.at(i).first;
+						int change = baseStats[location] + item->effect.at(i).second;
+						setStat(location, change);
+						hand = equippedItems.at(index);
+					}
+					holdingItem = true;
+					cout << "Equipped " << item->getName() << endl;
+			} else {
+				cout << "You have no items to equip!" << endl;
+			
+		}
+	}
+	
+	void unequipItem(int choice){
+		int index = choice - 1;
+		
+			if(equippedItems.size() != 0){
+				Item* item = equippedItems.at(index);
+					for(int i = 0; i < item->effect.size(); i++){
+						int location = item->effect.at(i).first;
+						int change = baseStats[location] - item->effect.at(i).second;
+						setStat(location, change);
+						hand = NULL;
+					}
+				holdingItem = false;
+				cout << "Unequipped " <<  item->getName() << endl;
+				cout << endl;
+			}
+		
+	}
+
+	void deleteItem(int choice){
+		int index = choice - 1;
+			if(equippedItems.size() != 0) {
+				cout << "You have dropped the " << equippedItems.at(index)->getName() << "." << endl;
+				equippedItems.erase(equippedItems.begin() + index);
+				cout << endl;
+			}
+	} 	
+
+
 	string getName(){
 		return name;
 	}
 	int getRank(){
 		return rank;
+	}
+	int getMoney(){
+		return money;
 	}
 	string getFightStyle(){
 		return fightStyle;
@@ -89,6 +174,33 @@ class Character{
 	}
 	int getHP(){
 		return baseStats[5];
+	}
+	Ability* getAbility(){
+		return uniqueAbility;
+	}
+	Item* getItem(int num){
+		return equippedItems.at(num - 1);
+	}
+	Item* getHand(){
+		return hand;
+	}
+	vector<Item*> getItems(){
+		return equippedItems;
+	}
+	void showItems(){
+		if(equippedItems.size() != 0){
+			for (int i = 0; i < equippedItems.size(); i++){
+				Item* stash = equippedItems.at(i);
+				cout << i + 1 << ". " << stash->getName() << endl;
+			}
+		}else{
+			cout << "You have no items in your inventory!" << endl;
+		}
+	}
+
+	void showAbility(){
+		cout << "Name: " << uniqueAbility->getName() << endl;
+		cout << "Description: " << uniqueAbility->getDescription() << endl;
 	}
 	virtual void display()=0;
 	
