@@ -3,10 +3,13 @@
 #include <string>
 #include <iostream>
 #include <fstream>
+
 #include <vector>
 #include <utility>
 #include "../AbilityItem/ability.hpp"
 #include "../AbilityItem/item.hpp"
+
+//#include "../Attacks/attack.hpp"
 
 using namespace std;
 
@@ -18,8 +21,13 @@ class Character{
 	int health;
 	vector<Item*>equippedItems;
 	int rank;
+
 	//Attack[4]attacks;
 	Ability* uniqueAbility;
+
+	//vector <Attack*> attacks;
+	//Ability uniqueAbility;
+
 	int statusAilment;
 	bool holdingItem = false;
 	const char* imageFilePath;
@@ -60,9 +68,13 @@ class Character{
 	void setName(string specifiedName){
 		name=specifiedName;
 	}
+
 	void setHealth(){
 		health= baseStats[5]*4;
 	}
+	//void setAttack(Attack *move){
+	//	attacks.push_back(move);
+	//}
 	void setBattleHealth(int hp){
 		health=hp;
 	}
@@ -158,6 +170,7 @@ class Character{
 	int getHP(){
 		return baseStats[5];
 	}
+
 	Ability* getAbility(){
 		return uniqueAbility;
 	}
@@ -175,6 +188,10 @@ class Character{
 	void showAbility(){
 		cout << "Name: " << uniqueAbility->getName() << endl;
 		cout << "Description: " << uniqueAbility->getDescription() << endl;
+
+	int getStat(int stat){
+		return stat;
+
 	}
 	virtual void display()=0;
 	
