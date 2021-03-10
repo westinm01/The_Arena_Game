@@ -59,7 +59,8 @@ class Character{
 		return imageFilePath; 
 	}
 	string getName(){
-		return name;
+		//return name;
+		return "called getName()";
 	}
 	int getRank(){
 		return rank;
