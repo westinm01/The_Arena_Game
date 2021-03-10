@@ -1,48 +1,69 @@
 #ifndef __DATABASE_HPP__
 #define __DATABASE_HPP__
 
+#include "../AbilityItem/item.hpp"
 #include <initializer_list>
 #include <vector>
 #include <iosfwd>
 #include <iostream>
 
+using namespace std;
+
 class Database
 {
-    vector<Character*> characters;    
+		vector<Item*> shopItems;    
 
-public:
-    ~Database(){}
-	Database(){
+	public:
+		~Database(){}
+		Database(){
 		
-	}
-    Character* getCharacter(string choice){
- 	if(characters.size() != 0){		
-
-			return characters.at(stoi(choice));
 		}
-		 else {
-			std::cout << "Invalid selection" << std::endl;
+    		void fill_database(){
+ 			shopItems.push_back(new SLance());
+			shopItems.push_back(new SStaff());
+			shopItems.push_back(new SNun());
+			shopItems.push_back(new SShield());
+			shopItems.push_back(new SDagg());
+			shopItems.push_back(new SSword());
+			shopItems.push_back(new SGaunt());
+			shopItems.push_back(new BStar());
+			shopItems.push_back(new HNun());
+			shopItems.push_back(new StrLance());
+			shopItems.push_back(new PStaff());
+			shopItems.push_back(new SilShield());
+			shopItems.push_back(new SilSword());
+			shopItems.push_back(new TDagg());
+			shopItems.push_back(new IGaunt());
+			shopItems.push_back(new TStar());
+			shopItems.push_back(new BLance());
+			shopItems.push_back(new FStaff());
+			shopItems.push_back(new CNun());
+			shopItems.push_back(new DDagg());
+			shopItems.push_back(new GShield());
+			shopItems.push_back(new GSword());
+			shopItems.push_back(new CGaunt());
+			shopItems.push_back(new SStar());
+			shopItems.push_back(new SerLance());
+			shopItems.push_back(new NNun());
+			shopItems.push_back(new SacStaff());
+			shopItems.push_back(new WDagg());
+			shopItems.push_back(new OShield());
+			shopItems.push_back(new HSword());
+			shopItems.push_back(new BGaunt());
+			shopItems.push_back(new LTrinket());
 		}
-	} else {
-		std::cout << "ERROR: Empty database" << std::endl;
-	}
-	return 0;   
-    }
     
-    void clear(){
-	characters.clear();
-    }
+		void clear(){
+			shopItems.clear();
+		}
   
-    void add_character(Character* c){
-	characters.push_back(c);
-    }
 	void display_database(){
-		if(characters.size()==0){
-			cout<<"Database is empty."<<endl;
+		if(shopItems.size() == 0){
+			cout << "Database is empty." << endl;
 			return;
 		}
-		for(int i=0; i<characters.size();i++){
-			cout<<i+1<<") "<<characters.at(i)->getName()<<endl;
+		for(int i = 0; i < shopItems.size(); i++){
+			cout << i+1 << ". " << shopItems.at(i)->getName() << endl;
 		}
   }  
 };
