@@ -1,12 +1,14 @@
 #include <iostream>
-#include "menu.hpp"
+#include "MenuController.h"
 
-using namespace std; 
+using namespace std;
 
-int main(){
-    Menu* test = new MainMenu;
-    test->printMenu();
-    test->retrieveInput();
-    
+int main() {
+
+    MenuController* mc = new MenuController();
+    mc->mainMenu->printMenu();
+    mc->mainMenu->retrieveInput();
+
+
+    return 0;
 }
-
