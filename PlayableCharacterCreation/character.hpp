@@ -22,7 +22,7 @@ class Character{
 	Ability* uniqueAbility;
 	int statusAilment;
 	Item* hand;
-	bool holdingItem = false;
+	bool holdingItem;
 	const char* imageFilePath;
 	public:
 	Character(){
@@ -85,6 +85,9 @@ class Character{
 	void setAbility(Ability* a){
 		uniqueAbility = a;
 	}
+	bool isHolding(){
+		return holdingItem;
+	}
 
 	void equipItem(int choice){
 		int index = choice - 1;
@@ -98,7 +101,7 @@ class Character{
 						hand = equippedItems.at(index);
 					}
 					holdingItem = true;
-					cout << "Equipped" << item->getName() << endl;
+					cout << "Equipped " << item->getName() << endl;
 			} else {
 				cout << "You have no items to equip!" << endl;
 			}
