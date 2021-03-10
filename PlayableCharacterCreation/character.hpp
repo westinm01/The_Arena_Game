@@ -3,6 +3,7 @@
 #include <string>
 #include <iostream>
 #include <fstream>
+//#include "../Attacks/attack.hpp"
 using namespace std;
 
 class Character{
@@ -13,7 +14,7 @@ class Character{
 	int health;
 	//Item[3] equippedItems;
 	int rank;
-	//Attack[4]attacks;
+	//vector <Attack*> attacks;
 	//Ability uniqueAbility;
 	int statusAilment;
 	const char* imageFilePath;
@@ -32,7 +33,7 @@ class Character{
 	}
 	
 	void setStat(int stat, int change){
-		baseStats[stats]=change;
+		baseStats[stat]=change;
 	}
 	void setWeaponStats(char sword, char dagger, char lance, char fists, char nunchuck, char staff, char star, char shield){
 		weaponStats[0]=sword;
@@ -47,8 +48,17 @@ class Character{
 	void setName(string specifiedName){
 		name=specifiedName;
 	}
+	//void setAttack(Attack *move){
+	//	attacks.push_back(move);
+	//}
 	void setHealth(int hp){
 		health=hp*4;
+	}
+	void setBattleHealth(int hp){
+		health=hp;
+	}
+	int getBattleHealth(int hp){
+		return health;
 	}
 	void setStatusAilment(int ailment){
 		statusAilment=ailment;

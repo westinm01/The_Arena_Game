@@ -4,7 +4,7 @@
 
 class Backstab:public Attack{
 	public:
-        	RoundhouseKick(){
+        	BackStab(){
                 	setBaseDamage(120);
                		setWeaponType(0);
               		setDependency(1);
