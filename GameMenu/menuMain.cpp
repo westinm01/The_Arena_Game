@@ -6,6 +6,7 @@ using namespace std;
 int main(){
     Menu* test = new MainMenu;
     test->printMenu();
+    test->retrieveInput();
     
 }
 
