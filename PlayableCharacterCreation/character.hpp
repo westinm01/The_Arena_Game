@@ -21,6 +21,7 @@ class Character{
 	//Attack[4]attacks;
 	Ability* uniqueAbility;
 	int statusAilment;
+	Item* hand;
 	bool holdingItem = false;
 	const char* imageFilePath;
 	public:
@@ -94,9 +95,10 @@ class Character{
 						int location = item->effect.at(i).first;
 						int change = baseStats[location] + item->effect.at(i).second;
 						setStat(location, change);
-					
+						hand = equippedItems.at(index);
 					}
 					holdingItem = true;
+					cout << "Equipped" << item->getName() << endl;
 			} else {
 				cout << "You have no items to equip!" << endl;
 			}
@@ -112,6 +114,7 @@ class Character{
 						int location = item->effect.at(i).first;
 						int change = baseStats[location] - item->effect.at(i).second;
 						setStat(location, change);
+						hand = NULL;
 					}
 				holdingItem = false;
 				cout << "Unequipped " <<  item->getName() << endl;
@@ -164,11 +167,18 @@ class Character{
 	Item* getItem(int num){
 		return equippedItems.at(num - 1);
 	}
+	Item* getHand(){
+		return hand;
+	}
 
 	void showItems(){
-		for (int i = 0; i < equippedItems.size(); i++){
-			Item* stash = equippedItems.at(i);
-			cout << i + 1 << ". " << stash->getName() << endl;
+		if(equippedItems.size() != 0){
+			for (int i = 0; i < equippedItems.size(); i++){
+				Item* stash = equippedItems.at(i);
+				cout << i + 1 << ". " << stash->getName() << endl;
+			}
+		}else{
+			cout << "You have no items in your inventory!" << endl;
 		}
 	}
 
