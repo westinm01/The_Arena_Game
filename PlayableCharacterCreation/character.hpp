@@ -91,7 +91,7 @@ class Character{
 
 	void equipItem(int choice){
 		int index = choice - 1;
-		if(holdingItem != true){
+		
 			if(equippedItems.size() != 0){
 				Item* item = equippedItems.at(index);
 					for (int i = 0; i < item->effect.size(); i++){
@@ -104,13 +104,13 @@ class Character{
 					cout << "Equipped " << item->getName() << endl;
 			} else {
 				cout << "You have no items to equip!" << endl;
-			}
+			
 		}
 	}
 	
 	void unequipItem(int choice){
 		int index = choice - 1;
-		if(holdingItem == true){
+		
 			if(equippedItems.size() != 0){
 				Item* item = equippedItems.at(index);
 					for(int i = 0; i < item->effect.size(); i++){
@@ -121,8 +121,9 @@ class Character{
 					}
 				holdingItem = false;
 				cout << "Unequipped " <<  item->getName() << endl;
+				cout << endl;
 			}
-		}
+		
 	}
 
 	void deleteItem(int choice){
@@ -130,6 +131,7 @@ class Character{
 			if(equippedItems.size() != 0) {
 				cout << "You have dropped the " << equippedItems.at(index)->getName() << "." << endl;
 				equippedItems.erase(equippedItems.begin() + index);
+				cout << endl;
 			}
 	} 	
 
@@ -173,7 +175,9 @@ class Character{
 	Item* getHand(){
 		return hand;
 	}
-
+	vector<Item*> getItems(){
+		return equippedItems;
+	}
 	void showItems(){
 		if(equippedItems.size() != 0){
 			for (int i = 0; i < equippedItems.size(); i++){

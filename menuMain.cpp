@@ -18,7 +18,9 @@ int main(){
 	mainCharacter->addItem(new HSword());
 	mainCharacter->addItem(new SLance());
 	mainCharacter->addItem(new SerLance());
+
 	mainCharacter->equipItem(1);
+
 	Inventory* inven = new Inventory();
 
 	inven->menuFunc(mainCharacter);
