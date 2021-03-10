@@ -4,6 +4,10 @@
 #include <string>
 #include <iostream>
 #include <fstream>
+#include "../Attacks/SWORD_STRIKE.hpp"
+#include "../Attacks/RIGHTEOUS_BLADE.hpp"
+#include "../Attacks/INTIMIDATE.hpp"
+#include "../Attacks/SHIELD_THROW.hpp"
 using namespace std;
 
 class Vlad : public Character{
@@ -14,6 +18,14 @@ class Vlad : public Character{
 			setWeaponStats('S','C','A','D','D','D','D','S');
 			setFightStyle("Guardian");
 			setStatusAilment(0);
+			Attack * one = new SwordStrike();
+			setAttack(one);
+			Attack* two = new RighteousBlade();
+			setAttack(two);
+			Attack * three= new Intimidate();
+			setAttack(three);
+			Attack * four = new ShieldThrow();
+			setAttack(four);
 			//setImageFilePath((const char*)"../characterImages/vladImage.txt");
 		}
 		virtual void display(){

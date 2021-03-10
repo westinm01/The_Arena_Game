@@ -4,6 +4,10 @@
 #include <string>
 #include <iostream>
 #include <fstream>
+#include "../Attacks/LAUGH_ATTACK.hpp"
+#include "../Attacks/BELLY_ROLL.hpp"
+#include "../Attacks/DANCE.hpp"
+#include "../Attacks/PLAY_AROUND.hpp"
 using namespace std;
 class Kenny: public Character{
 	public:
@@ -13,6 +17,14 @@ class Kenny: public Character{
                         setWeaponStats('D','B','D','S','C','B','D','A');
                         setFightStyle("Trickster");
                         setStatusAilment(0);
+			Attack* one = new LaughAttack();
+			setAttack(one);
+			Attack * two = new BellyRoll();
+			setAttack(two);
+			Attack * three = new Dance();
+			setAttack(three);
+			Attack * four= new PlayAround();
+			setAttack(four);
 			//setImageFilePath((const char*)"../charactetImages/kennyImage.txt");
 		}
 		virtual void display(){

@@ -5,6 +5,10 @@
 #include <string>
 #include <iostream>
 #include <fstream>
+#include "../Attacks/SWEEP.hpp"
+#include "../Attacks/STAR_STRIKE.hpp"
+#include "../Attacks/DUSK_DASH.hpp"
+#include "../Attacks/SHADE_SHURIKEN.hpp"
 using namespace std;
 class Shadow: public Character{
         public:
@@ -14,6 +18,14 @@ class Shadow: public Character{
                         setWeaponStats('B','A','S','D','C','D','S','C');
                         setFightStyle("Ninja");
                         setStatusAilment(0);
+			Attack * one = new Sweep();
+			setAttack(one);
+			Attack* two = new StarStrike();
+			setAttack(two);
+			Attack * three = new DuskDash();
+			setAttack(three);
+			Attack * four = new ShadeShuriken();
+			setAttack(four);
 			//setImageFilePath((const char*)"../characterImages/shadowImage.hpp");
                 }
 		virtual void display(){

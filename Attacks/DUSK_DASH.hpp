@@ -3,13 +3,15 @@
 
 #include "attack.hpp"
 using namespace std;
-class DUSK_DASH:public Attack{
+class DuskDash:public Attack{
         public:
-                Brace(){
+                DuskDash(){
                         setBaseDamage(75);
                         setWeaponType(2);
                         setDependency(1);
                         setDefensive(2);
+			setName("Dusk Dash");
+			setDescription("No additional effects.");
                 }
                 virtual void attackBehavior(){
                      	int damage=dealDamage();

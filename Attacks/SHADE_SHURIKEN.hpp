@@ -10,6 +10,8 @@ class ShadeShuriken:public Attack{
                         setWeaponType(7);
                         setDependency(1);
                         setDefensive(2);
+			setName("Shade Shuriken");
+			setDescription("Has double the chance to critically strike.");
                 }
                 virtual void attackBehavior(){
                         int damage=dealDamage();

@@ -10,9 +10,12 @@ class LaughAttack:public Attack{
                         setWeaponType(0);
                         setDependency(0);
                         setDefensive(0);
+			setName("Laugh Attack");
+			setDescription("Lowers foe special defense by 1 stage, and increase own speed by 1 stage.");
                 }
                 virtual void attackBehavior(){
                 	statChange(4,-1);
+			statChange(5,1);
 		}
 };
 #endif

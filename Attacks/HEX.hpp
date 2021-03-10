@@ -10,6 +10,8 @@ class Hex:public Attack{
                         setWeaponType(6);
                         setDependency(3);
                         setDefensive(4);
+			setName("Hex");
+			setDescription("30\% chance to lower target's special defense.");
                 }
                 virtual void attackBehavior(){
                         int damage=dealDamage();

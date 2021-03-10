@@ -10,6 +10,8 @@ class SleepSpell:public Attack{
                         setWeaponType(0);
                         setDependency(0);
                         setDefensive(0);
+			setName("Sleep Spell");
+			setDescription("Has a 50\% chance to put an enemy to sleep, otherwise lower their speed.");
                 }
                 virtual void attackBehavior(){
                         inflictStatusAilment(3,50);

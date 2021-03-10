@@ -1,6 +1,6 @@
 #ifndef SHIELD_THROW_HPP
 #define SHIELD_THROW_HPP
-
+#include "attack.hpp"
 using namespace std;
 class ShieldThrow: public Attack{
         public:
@@ -9,6 +9,8 @@ class ShieldThrow: public Attack{
                         setWeaponType(8);
                         setDependency(2);
                         setDefensive(2);
+			setName("Shield Throw");
+			setDescription("Confuses target. Can only be used once per turn.");
                 }
                 virtual void attackBehavior(){
                   	int damage=dealDamage();

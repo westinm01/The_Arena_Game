@@ -9,6 +9,8 @@ class PlayAround: public Attack{
                         setWeaponType(4);
                         setDependency(3);
                         setDefensive(4);
+			setName("Play Around");
+			setDescription("Has a 20\% chance to confuse the opponent.");
                 }
                 virtual void attackBehavior(){
                         int damage= dealDamage();

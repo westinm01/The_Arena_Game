@@ -25,7 +25,7 @@ class Character{
 	//Attack[4]attacks;
 	Ability* uniqueAbility;
 
-	//vector <Attack*> attacks;
+	vector <Attack*> attacks;
 	//Ability uniqueAbility;
 	int stages [6];
 	int statusAilment;
@@ -36,6 +36,11 @@ class Character{
 		rank=1;
 		for(int i: stages){
 			i=0;
+		}
+	}
+	~Character(){
+		for(Attack* a : attacks){
+			delete a;
 		}
 	}
 	void setBaseStats(int atk, int def, int spatk, int spdef,int spd, int hp){
@@ -78,9 +83,16 @@ class Character{
 	void setHealth(){
 		health= baseStats[5]*4;
 	}
-	//void setAttack(Attack *move){
-	//	attacks.push_back(move);
-	//}
+	void setAttack(Attack *move){
+		attacks.push_back(move);
+	}
+	Attack* getAttack(int i){
+		if(i>3 || i<0){
+			return 0;
+		}
+		return attacks.at(i);
+	}
+	
 	void setBattleHealth(int hp){
 		health=hp;
 	}
@@ -164,9 +176,9 @@ class Character{
 	char getWeaponStat(int i){
 		return weaponStats[i];
 	}
-	int getAttack(){
-		return baseStats[0];
-	}
+	//int getAttack(){
+	//	return baseStats[0];
+	//}
 	int getDefense(){
 		return baseStats[1];
 	}
@@ -202,7 +214,7 @@ class Character{
 		cout << "Description: " << uniqueAbility->getDescription() << endl;
 	}
 	int getStat(int stat){
-		return stat;
+		return baseStats[stat];
 
 	}
 	int getStatus(){

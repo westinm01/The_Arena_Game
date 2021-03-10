@@ -9,6 +9,8 @@ class SnackSnatch: public Attack{
                         setWeaponType(4);
                         setDependency(5);
                         setDefensive(2);
+			setName("Snack Snatch");
+			setDescription("Unequip one item off of the target. This attack's damage depends on the user's speed.");
                 }
                 virtual void attackBehavior(){
                        	int damage=dealDamage();

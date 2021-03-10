@@ -6,15 +6,17 @@ using namespace std;
 class BellyRoll:public Attack{
         public:
                 BellyRoll(){
-			if(getUser()->getStacks()>0){
-                        	setBaseDamage(20+20*(getUser()->getStacks()));
-			}
-			else{
-				setBaseDamage(20);
-			}
+			//if(getUser()->getStage(4)>0){
+                        //	setBaseDamage(70+20*(getUser()->getStage(4)));
+			//}
+			//else{
+				setBaseDamage(70);
+			//}
                         setWeaponType(3);
                         setDependency(3);
                         setDefensive(2);
+			setName("Belly Roll");
+			setDescription("Adds +20 base damage for each increased stage on speed.");
                 }
                 virtual void attackBehavior(){
                         int damage=dealDamage();

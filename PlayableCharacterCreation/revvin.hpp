@@ -5,6 +5,10 @@
 #include <string>
 #include <iostream>
 #include <fstream>
+#include "../Attacks/VANDALIZE.hpp"
+#include "../Attacks/INTIMIDATE.hpp"
+#include "../Attacks/NUNCHUCK_WHIPLASH.hpp"
+#include "../Attacks/SNACK_SNATCH.hpp"
 using namespace std;
 class Revvin: public Character{
         public:
@@ -14,6 +18,14 @@ class Revvin: public Character{
                         setWeaponStats('B','A','C','A','S','D','C','C');
                         setFightStyle("Rebel");
                         setStatusAilment(0);
+			Attack * one = new Vandalize();
+			setAttack(one);
+			Attack * two = new Intimidate();
+			setAttack(two);
+			Attack * three = new NunchuckWhiplash();
+			setAttack(three);
+			Attack * four = new SnackSnatch();
+			setAttack(four);
 			//setImageFilePath((const char*)"../characterImages/revvinImage.txt");
 
                 }

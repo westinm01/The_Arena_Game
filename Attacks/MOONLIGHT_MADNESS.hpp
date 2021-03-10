@@ -10,6 +10,8 @@ class MoonlightMadness:public Attack{
                         setWeaponType(0);
                         setDependency(0);
                         setDefensive(0);
+			setName("Moonlight Madness");
+			setDescription("Boost own special attack by 2 stages.");
                 }
                 virtual void attackBehavior(){
                         statChange(3,2);

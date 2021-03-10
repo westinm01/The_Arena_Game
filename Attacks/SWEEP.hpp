@@ -10,6 +10,8 @@ class Sweep:public Attack{
                         setWeaponType(3);
                         setDependency(1);
                         setDefensive(2);
+			setName("Sweep");
+			setDescription("Lowers target's speed by 1 stage.");
                 }
                 virtual void attackBehavior(){
 			int damage=dealDamage();

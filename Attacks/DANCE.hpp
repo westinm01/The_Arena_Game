@@ -9,6 +9,8 @@ class Dance: public Attack{
 			setWeaponType(0);
 			setDependency(0);
 			setDefensive(0);
+			setName("Dance");
+			setDescription("Boost a random stat by 2.");
 		}
 		virtual void attackBehavior(){
 			srand(time(NULL));

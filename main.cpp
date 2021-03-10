@@ -50,12 +50,17 @@ Character* characterSelection(){
 	mainCharacter->display();
         cout<<"You have chosen "<<mainCharacter->getName()<<"!"<<endl;
         cout<<"Base Stats: "<<endl;
-        cout<<"\tAttack:" <<mainCharacter->getAttack()<<endl;
+        cout<<"\tAttack: " <<mainCharacter->getStat(0)<<endl;
         cout<<"\tDefense: "<<mainCharacter->getDefense()<<endl;
         cout<<"\tIntelligence: "<<mainCharacter->getSpecialAttack()<<endl;
         cout<<"\tSpecial Defense: "<<mainCharacter->getSpecialDefense()<<endl;
         cout<<"\tSpeed: "<<mainCharacter->getSpeed()<<endl;
-        cout<<"\tHealth "<<mainCharacter->getHP()<<endl;
+        cout<<"\tHealth: "<<mainCharacter->getHP()<<endl;
+	cout<<"Attacks:"<<endl;
+	for(int i =0; i<4;i++){
+		cout<<"\t"<<i+1<<") "<<mainCharacter->getAttack(i)->getName() <<"\tBase Damage: "<< mainCharacter->getAttack(i)->getBaseDamage() <<endl;
+		cout<<"\t\t-"<<mainCharacter->getAttack(i)->getDescription()<<endl;
+	}
         delete factory;
 	return mainCharacter;
 }
