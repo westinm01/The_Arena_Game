@@ -4,8 +4,10 @@
 #include <iostream>
 #include <fstream>
 #include <vector>
+#include <utility>
 #include "../AbilityItem/ability.hpp"
 #include "../AbilityItem/item.hpp"
+
 using namespace std;
 
 class Character{
@@ -31,10 +33,10 @@ class Character{
 		baseStats[3]=spdef;
 		baseStats[4]=spd;
 		baseStats[5]=hp;
-		setHealth(baseStats[5]);
+		setHealth();
 	}
 	void setStat(int stat, int change){
-		baseStats[stat] = change;
+		baseStats[stat] = baseStats[stat] + change;
 	}
 	void setWeaponStats(char sword, char dagger, char lance, char fists, char nunchuck, char staff, char star, char shield){
 		weaponStats[0]=sword;
@@ -57,8 +59,8 @@ class Character{
 	void setName(string specifiedName){
 		name=specifiedName;
 	}
-	void setHealth(int hp){
-		health=hp*4;
+	void setHealth(){
+		health= baseStats[5]*4;
 	}
 	void setStatusAilment(int ailment){
 		statusAilment=ailment;
@@ -75,6 +77,43 @@ class Character{
 	void setAbility(Ability* a){
 		uniqueAbility = a;
 	}
+
+	void equipItem(int choice){
+		int index = choice - 1;
+		if(equippedItems.size() != 0){
+			Item* item = equippedItems.at(index);
+				for (int i = 0; i < item->effect.size(); i++){
+					int location = item->effect.at(i).first;
+					int change = baseStats[location] + item->effect.at(i).second;
+					setStat(location, change);
+				}
+		} else {
+			cout << "You have no items to equip!" << endl;
+		}
+	}
+	
+	void unequipItem(int choice){
+		int index = choice - 1;
+		if(equippedItems.size() != 0){
+			Item* item = equippedItems.at(index);
+				for(int i = 0; i < item->effect.size(); i++){
+					int location = item->effect.at(i).first;
+					int change = baseStats[location] - item->effect.at(i).second;
+					setStat(location, change);
+				}
+			cout << "Unequipped " <<  item->getName() << endl;
+		}
+	}
+
+	void deleteItem(int choice){
+		int index = choice - 1;
+			if(equippedItems.size() != 0) {
+				cout << "You have dropped the " << equippedItems.at(index)->getName() << endl;
+				equippedItems.erase(equippedItems.begin() + index);
+			}
+	} 	
+
+
 	string getName(){
 		return name;
 	}

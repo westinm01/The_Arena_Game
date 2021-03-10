@@ -21,9 +21,13 @@ TEST(ItemTest, SLanceTest){
 }
 
 TEST(ItemTest, TDaggTest){
-	Item* i = new TDagg();
+	Character* c = new Vlad();
+	c->addItem(new TDagg());
 
-	EXPECT_EQ(i->getName(), "Thief Dagger");
+	EXPECT_EQ(c->getItem(1)->getName(), "Thief Dagger");
+	
 }
+
+
 
 #endif
