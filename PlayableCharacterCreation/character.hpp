@@ -24,6 +24,7 @@ class Character{
 	Item* hand;
 	bool holdingItem;
 	const char* imageFilePath;
+	int money = 0;
 	public:
 	Character(){
 		rank=1;
@@ -85,6 +86,9 @@ class Character{
 	void setAbility(Ability* a){
 		uniqueAbility = a;
 	}
+	void setMoney(int gold){
+		money = gold;
+	}
 	bool isHolding(){
 		return holdingItem;
 	}
@@ -141,6 +145,9 @@ class Character{
 	}
 	int getRank(){
 		return rank;
+	}
+	int getMoney(){
+		return money;
 	}
 	string getFightStyle(){
 		return fightStyle;

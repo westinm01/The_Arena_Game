@@ -17,11 +17,11 @@ int main(){
 
 	Character* mainCharacter = new Revvin();
 	mainCharacter->addItem(new HSword());
+	mainCharacter->addItem(new NNun());
 	mainCharacter->equipItem(1);
-
+	mainCharacter->setMoney(600);
 	Shop* shop = new Shop();
-	shop->printMenu();
-
+	shop->retrieveInput(mainCharacter);
 	return 0;
 }
 #endif

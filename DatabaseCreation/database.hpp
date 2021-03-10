@@ -65,7 +65,10 @@ class Database
 		for(int i = 0; i < shopItems.size(); i++){
 			cout << i+1 << ". " << shopItems.at(i)->getName() << endl;
 		}
-  }  
+	}
+	Item* pullItem(int num){
+		return shopItems.at(num - 1);
+	}  
 };
    
 #endif //__DATABASE_HPP__
