@@ -2243,3 +2243,35 @@ Parsed CXX implicit link information from above output:
   implicit fwks: []
 
 
+Determining if the include file pthread.h exists passed with the following output:
+Change Dir: /home/csmajs/mghor004/final-project-bmcgh001-mghor004-wmont012/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/opt/rh/devtoolset-6/root/usr/bin/gmake cmTC_5430e/fast && gmake[1]: Entering directory '/home/csmajs/mghor004/final-project-bmcgh001-mghor004-wmont012/CMakeFiles/CMakeTmp'
+/opt/rh/devtoolset-6/root/usr/bin/gmake  -f CMakeFiles/cmTC_5430e.dir/build.make CMakeFiles/cmTC_5430e.dir/build
+gmake[2]: Entering directory '/home/csmajs/mghor004/final-project-bmcgh001-mghor004-wmont012/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_5430e.dir/CheckIncludeFile.c.o
+/opt/rh/devtoolset-6/root/usr/bin/cc    -o CMakeFiles/cmTC_5430e.dir/CheckIncludeFile.c.o   -c /home/csmajs/mghor004/final-project-bmcgh001-mghor004-wmont012/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_5430e
+/usr/bin/cmake3 -E cmake_link_script CMakeFiles/cmTC_5430e.dir/link.txt --verbose=1
+/opt/rh/devtoolset-6/root/usr/bin/cc      -rdynamic CMakeFiles/cmTC_5430e.dir/CheckIncludeFile.c.o  -o cmTC_5430e 
+gmake[2]: Leaving directory '/home/csmajs/mghor004/final-project-bmcgh001-mghor004-wmont012/CMakeFiles/CMakeTmp'
+gmake[1]: Leaving directory '/home/csmajs/mghor004/final-project-bmcgh001-mghor004-wmont012/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function pthread_create exists in the pthread passed with the following output:
+Change Dir: /home/csmajs/mghor004/final-project-bmcgh001-mghor004-wmont012/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/opt/rh/devtoolset-6/root/usr/bin/gmake cmTC_135be/fast && gmake[1]: Entering directory '/home/csmajs/mghor004/final-project-bmcgh001-mghor004-wmont012/CMakeFiles/CMakeTmp'
+/opt/rh/devtoolset-6/root/usr/bin/gmake  -f CMakeFiles/cmTC_135be.dir/build.make CMakeFiles/cmTC_135be.dir/build
+gmake[2]: Entering directory '/home/csmajs/mghor004/final-project-bmcgh001-mghor004-wmont012/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_135be.dir/CheckFunctionExists.c.o
+/opt/rh/devtoolset-6/root/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_135be.dir/CheckFunctionExists.c.o   -c /usr/share/cmake3/Modules/CheckFunctionExists.c
+Linking C executable cmTC_135be
+/usr/bin/cmake3 -E cmake_link_script CMakeFiles/cmTC_135be.dir/link.txt --verbose=1
+/opt/rh/devtoolset-6/root/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_135be.dir/CheckFunctionExists.c.o  -o cmTC_135be  -lpthread 
+gmake[2]: Leaving directory '/home/csmajs/mghor004/final-project-bmcgh001-mghor004-wmont012/CMakeFiles/CMakeTmp'
+gmake[1]: Leaving directory '/home/csmajs/mghor004/final-project-bmcgh001-mghor004-wmont012/CMakeFiles/CMakeTmp'
+
+
+
