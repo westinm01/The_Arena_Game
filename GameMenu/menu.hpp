@@ -17,7 +17,7 @@ class MainMenu;
 class Settings : public Menu{
 public:
    Settings() {}
-   Menu* main = new MainMenu();
+   MainMenu* main;
         virtual void printMenu(){
         cout << "-= Settings =-" << endl;
         cout << "1. Difficulty" << endl;
@@ -31,8 +31,9 @@ public:
             cout << "hardness" << endl;  //DELETE LATER
       }
         if (choice == "2"){
-	   //back();
-           main->printMenu();
+	   cout << "selected back\n";
+	    //back();
+           //main->printMenu();
 //	   main->retrieveInput();
       }
    }
