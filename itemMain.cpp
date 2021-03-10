@@ -19,9 +19,9 @@ int main(){
 
 	cout << "You have chosen " << mainCharacter->getName() << "." << endl;
 
-	mainCharacter->addItem(new SLance());
-	mainCharacter->addItem(new TDagg());
-	mainCharacter->addItem(new SilShield());
+	mainCharacter->addItem(new GShield());
+	mainCharacter->addItem(new HSword());
+	mainCharacter->addItem(new LTrinket());
 
 	cout << endl;
 	cout << "Initial Health: " << mainCharacter->getHP() << endl;
@@ -39,6 +39,8 @@ int main(){
 
 	mainCharacter->setHealth();
 
+	cout << "You have selected: " << mainCharacter->getItem(choice)->getName() << endl;
+	cout << "You receive: " << mainCharacter->getItem(choice)->getDesc() << endl;
 	cout << endl;
 
 	cout << "Final Health: " << mainCharacter->getHP() << endl;
@@ -48,7 +50,7 @@ int main(){
 
 	cout << "Unequipping..." << endl;
 
-	mainCharacter->unequipItem(1);
+	mainCharacter->unequipItem(choice);
 
 	mainCharacter->setHealth();
 
@@ -59,9 +61,9 @@ int main(){
 
 	cout << endl;
 	
-	cout << "Dropping " << mainCharacter->getItem(1)->getName() << endl;
+	cout << "Dropping... " << endl;
 
-	mainCharacter->deleteItem(1);
+	mainCharacter->deleteItem(choice);
 
 	cout << endl;
 	mainCharacter->showItems();

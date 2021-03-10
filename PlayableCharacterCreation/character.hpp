@@ -63,6 +63,12 @@ class Character{
 	void setHealth(){
 		health= baseStats[5]*4;
 	}
+	void setBattleHealth(int hp){
+		health=hp;
+	}
+	int getBattleHealth(int hp){
+		return health;
+	}
 	void setStatusAilment(int ailment){
 		statusAilment=ailment;
 	}
@@ -88,12 +94,12 @@ class Character{
 						int location = item->effect.at(i).first;
 						int change = baseStats[location] + item->effect.at(i).second;
 						setStat(location, change);
+					
 					}
+					holdingItem = true;
 			} else {
 				cout << "You have no items to equip!" << endl;
 			}
-		} else{
-			cout <<	"You are already holding a weapon... unequip to select a new one." << endl;
 		}
 	}
 	
@@ -107,6 +113,7 @@ class Character{
 						int change = baseStats[location] - item->effect.at(i).second;
 						setStat(location, change);
 					}
+				holdingItem = false;
 				cout << "Unequipped " <<  item->getName() << endl;
 			}
 		}

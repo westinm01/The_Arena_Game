@@ -4,6 +4,8 @@
 //#include "../PlayableCharacterCreation/character.hpp"
 #include <iostream>
 #include <string>
+#include <vector>
+#include <utility>
 
 using namespace std;
 
@@ -13,21 +15,18 @@ class Item{
 		std::string name;
 		int itemType;
 		int price;
-		Character* playerChar;
+		std::string desc;
 	public:
+		vector<pair<int,int>> effect;
+		
 		Item(){}
 
-		Item(Character* player){
-			playerChar = player;
-		}
-
-		virtual ~Item(){delete playerChar;}
+		virtual ~Item(){}
 
 		std::string getName(){return name;}
 		int getPrice(){return price;}
 		int getItemType(){return itemType;}
-
-		virtual void itemBehavior() = 0;
+		std::string getDesc() {return desc;}
 };
 
 class SLance: public Item{
@@ -36,24 +35,12 @@ class SLance: public Item{
 			name = "Standard Lance";
 			itemType = 3;
 			price = 30;
-		}
-		SLance(Character* player) : Item(player){
-			name = "Standard Lance";
-			itemType = 3;
-			price = 30;
-		}
-	
-		virtual void itemBehavior(){
-/*
-			playerChar->setStat(0, playerChar->getStat(0) + 4);
-			int newHealth = playerChar->getStat(5) + 1;
-			playerChar->setStat(5, newHealth);
-			playerChar->setHealth(newHealth);
-*/
+			desc = "+5 attack\n+1 health";
+			effect.push_back(pair<int,int>(0, 4));
+			effect.push_back(pair<int,int>(5, 1));
 		}
 	
 };
-
 
 class SStaff: public Item{
 	public:
@@ -61,16 +48,8 @@ class SStaff: public Item{
 			name = "Standard Staff";
 			itemType = 6;
 			price = 40;
-		}
-
-		SStaff(Character* player) : Item(player){
-			name = "Standard Staff";
-			itemType = 6;
-			price = 40;
-		}
-	
-		virtual void itemBehavior(){
-
+			desc = "+4 special attack";
+			effect.push_back(pair<int,int>(3, 4));
 		}	
 };
 
@@ -80,17 +59,9 @@ class SNun: public Item{
 			name = "Standard Nunchucks";
 			itemType = 5;
 			price = 30;
+			desc = "+5 attack";
+			effect.push_back(pair<int,int>(0, 5));
 		}
-
-		SNun(Character* player) : Item(player){
-			name = "Standard Staff";
-			itemType = 5;
-			price = 30;
-		}
-	
-		virtual void itemBehavior(){
-
-		}	
 };
 
 class SShield: public Item{
@@ -99,17 +70,10 @@ class SShield: public Item{
 			name = "Standard Shield";
 			itemType = 8;
 			price = 30;
+			desc = "+3 defense\n+2 special defense";
+			effect.push_back(pair<int,int>(1, 3));
+			effect.push_back(pair<int,int>(3, 2));
 		}
-
-		SShield(Character* player) : Item(player){
-			name = "Standard Shield";
-			itemType = 8;
-			price = 30;
-		}
-	
-		virtual void itemBehavior(){
-
-		}	
 };
 
 class SDagg: public Item{
@@ -118,16 +82,8 @@ class SDagg: public Item{
 			name = "Standard Dagger";
 			itemType = 2;
 			price = 25;
-		}
-
-		SDagg(Character* player) : Item(player){
-			name = "Standard Dagger";
-			itemType = 2;
-			price = 25;
-		}
-	
-		virtual void itemBehavior(){
-
+			desc = "+2 attack";
+			effect.push_back(pair<int,int>(0, 2));
 		}	
 };
 
@@ -137,16 +93,8 @@ class SSword: public Item{
 			name = "Standard Sword";
 			itemType = 1;
 			price = 25;
-		}
-
-		SSword(Character* player) : Item(player){
-			name = "Standard Sword";
-			itemType = 1;
-			price = 25;
-		}
-	
-		virtual void itemBehavior(){
-
+			desc = "+4 attack";
+			effect.push_back(pair<int,int>(0, 4));
 		}	
 };
 
@@ -156,17 +104,10 @@ class SGaunt: public Item{
 			name = "Standard Gauntlets";
 			itemType = 4;
 			price = 25;
+			desc = "+5 attack\n-1 special defense";
+			effect.push_back(pair<int,int>(0, 5));
+			effect.push_back(pair<int,int>(3, -1));
 		}
-
-		SGaunt(Character* player) : Item(player){
-			name = "Standard Gauntlets";
-			itemType = 4;
-			price = 25;
-		}
-	
-		virtual void itemBehavior(){
-
-		}	
 };
 
 class BStar: public Item{
@@ -175,16 +116,8 @@ class BStar: public Item{
 			name = "Burning Star";
 			itemType = 7;
 			price = 60;
-		}
-
-		BStar(Character* player) : Item(player){
-			name = "Burning Star";
-			itemType = 7;
-			price = 60;
-		}
-	
-		virtual void itemBehavior(){
-
+			desc = "+7 attack";
+			effect.push_back(pair<int,int>(0, 7));
 		}	
 };
 
@@ -194,17 +127,11 @@ class HNun: public Item{
 			name = "Heavy Nunchucks";
 			itemType = 5;
 			price = 70;
+			desc = "+8 attack\n+2 defense\n+2 health";
+			effect.push_back(pair<int,int>(0, 8));
+			effect.push_back(pair<int,int>(1, 2));
+			effect.push_back(pair<int,int>(5, 2));
 		}
-
-		HNun(Character* player) : Item(player){
-			name = "Heavy Nunchucks";
-			itemType = 5;
-			price = 70;
-		}
-	
-		virtual void itemBehavior(){
-
-		}	
 };
 
 class StrLance: public Item{
@@ -213,16 +140,9 @@ class StrLance: public Item{
 			name = "Strong Lance";
 			itemType = 3;
 			price = 65;
-		}
-
-		StrLance(Character* player) : Item(player){
-			name = "Strong Lance";
-			itemType = 3;
-			price = 65;
-		}
-	
-		virtual void itemBehavior(){
-
+			desc = "+8 attack\n+3 health";
+			effect.push_back(pair<int,int>(0, 8));
+			effect.push_back(pair<int,int>(5, 3));
 		}	
 };
 
@@ -232,17 +152,10 @@ class PStaff: public Item{
 			name = "Pixie Staff";
 			itemType = 6;
 			price = 75;
+			desc = "+10 special attack\n-1 defense";
+			effect.push_back(pair<int,int>(2, 10));
+			effect.push_back(pair<int,int>(1, -1));
 		}
-
-		PStaff(Character* player) : Item(player){
-			name = "Pixie Staff";
-			itemType = 6;
-			price = 75;
-		}
-	
-		virtual void itemBehavior(){
-
-		}	
 };
 
 class SilShield: public Item{
@@ -251,16 +164,10 @@ class SilShield: public Item{
 			name = "Silver Shield";
 			itemType = 8;
 			price = 80;
-		}
-
-		SilShield(Character* player) : Item(player){
-			name = "Silver Shield";
-			itemType = 8;
-			price = 80;
-		}
-	
-		virtual void itemBehavior(){
-
+			desc =  "+6 special defense\n+6 defense\n+2 health";
+			effect.push_back(pair<int,int>(3, 6));
+			effect.push_back(pair<int,int>(1, 6));
+			effect.push_back(pair<int,int>(5, 2));
 		}	
 };
 
@@ -270,16 +177,10 @@ class SilSword: public Item{
 			name = "Silver Sword";
 			itemType = 1;
 			price = 70;
-		}
-
-		SilSword(Character* player) : Item(player){
-			name = "Silver Sword";
-			itemType = 1;
-			price = 70;
-		}
-	
-		virtual void itemBehavior(){
-
+			desc = "+7 attack\n+2 special defense\n+1 defense";
+			effect.push_back(pair<int,int>(0, 7));
+			effect.push_back(pair<int,int>(3, 2));
+			effect.push_back(pair<int,int>(1, 1));
 		}	
 };
 
@@ -289,16 +190,8 @@ class TDagg: public Item{
 			name = "Thief Dagger";
 			itemType = 2;
 			price = 70;
-		}
-
-		TDagg(Character* player) : Item(player){
-			name = "Thief Dagger";
-			itemType = 2;
-			price = 70;
-		}
-	
-		virtual void itemBehavior(){
-
+			desc = "+6 attack";
+			effect.push_back(pair<int,int>(0, 6));
 		}	
 };
 
@@ -308,16 +201,9 @@ class IGaunt: public Item{
 			name = "Ice Gauntlets";
 			itemType = 4;
 			price = 75;
-		}
-
-		IGaunt(Character* player) : Item(player){
-			name = "Ice Gauntlets";
-			itemType = 4;
-			price = 75;
-		}
-	
-		virtual void itemBehavior(){
-
+			desc = "+10 attack\n-2 special defense";
+			effect.push_back(pair<int,int>(0, 10));
+			effect.push_back(pair<int,int>(3, -2));
 		}	
 };
 
@@ -327,16 +213,8 @@ class TStar: public Item{
 			name = "Toxic Star";
 			itemType = 7;
 			price = 150;
-		}
-
-		TStar(Character* player) : Item(player){
-			name = "Toxic Star";
-			itemType = 7;
-			price = 150;
-		}
-	
-		virtual void itemBehavior(){
-
+			desc = "+20 attack";
+			effect.push_back(pair<int,int>(0, 20));
 		}	
 };
 
@@ -346,16 +224,9 @@ class BLance: public Item{
 			name = "Bulky Lance";
 			itemType = 3;
 			price = 135;
-		}
-
-		BLance(Character* player) : Item(player){
-			name = "Bulky Lance";
-			itemType = 3;
-			price = 135;
-		}
-	
-		virtual void itemBehavior(){
-
+			desc = "+20 attack\n+5 health";
+			effect.push_back(pair<int,int>(0, 20));
+			effect.push_back(pair<int,int>(5, 5));
 		}	
 };
 
@@ -365,17 +236,10 @@ class FStaff: public Item{
 			name = "Forest Staff";
 			itemType = 6;
 			price = 160;
+			desc = "+22 attack\n+2 health";
+			effect.push_back(pair<int,int>(0, 22));
+			effect.push_back(pair<int,int>(5, 2));
 		}
-
-		FStaff(Character* player) : Item(player){
-			name = "Forest Staff";
-			itemType = 6;
-			price = 160;
-		}
-	
-		virtual void itemBehavior(){
-
-		}	
 };
 
 class CNun: public Item{
@@ -384,16 +248,8 @@ class CNun: public Item{
 			name = "Concrete Nunchucks";
 			itemType = 5;
 			price = 155;
-		}
-
-		CNun(Character* player) : Item(player){
-			name = "Concrete Nunchucks";
-			itemType = 5;
-			price = 155;
-		}
-	
-		virtual void itemBehavior(){
-
+			desc = "+20 attack";
+			effect.push_back(pair<int,int>(0, 20));
 		}	
 };
 
@@ -403,16 +259,8 @@ class DDagg: public Item{
 			name = "Dusk Dagger";
 			itemType = 2;
 			price = 160;
-		}
-
-		DDagg(Character* player) : Item(player){
-			name = "Dusk Dagger";
-			itemType = 2;
-			price = 160;
-		}
-	
-		virtual void itemBehavior(){
-
+			desc = "+18 attack";
+			effect.push_back(pair<int,int>(0, 18));
 		}	
 };
 
@@ -422,16 +270,11 @@ class GShield: public Item{
 			name = "Golden Shield";
 			itemType = 8;
 			price = 170;
-		}
-
-		GShield(Character* player) : Item(player){
-			name = "Golden Shield";
-			itemType = 8;
-			price = 170;
-		}
-	
-		virtual void itemBehavior(){
-
+			desc = "+15 defense\n+15 special defense\n+8 health\n-2 speed";
+			effect.push_back(pair<int,int>(1, 15));
+			effect.push_back(pair<int,int>(3, 15));
+			effect.push_back(pair<int,int>(5, 8));
+			effect.push_back(pair<int,int>(4, -2)); 
 		}	
 };
 
@@ -441,16 +284,9 @@ class GSword: public Item{
 			name = "Golden Sword";
 			itemType = 1;
 			price = 180;
-		}
-
-		GSword(Character* player) : Item(player){
-			name = "Golden Sword";
-			itemType = 1;
-			price = 180;
-		}
-	
-		virtual void itemBehavior(){
-
+			desc = "+22 attack\n+5 health";
+			effect.push_back(pair<int,int>(0, 22));
+			effect.push_back(pair<int,int>(5, 5));
 		}	
 };
 
@@ -460,16 +296,9 @@ class CGaunt: public Item{
 			name = "Cinderblock Gauntlets";
 			itemType = 4;
 			price = 150;
-		}
-
-		CGaunt(Character* player) : Item(player){
-			name = "Cinderblock Gauntlets";
-			itemType = 4;
-			price = 150;
-		}
-	
-		virtual void itemBehavior(){
-
+			desc = "+20 attack\n-3 special defense";
+			effect.push_back(pair<int,int>(0, 20));
+			effect.push_back(pair<int,int>(3, -3));
 		}	
 };
 
@@ -479,16 +308,9 @@ class SStar: public Item{
 			name = "Super Star";
 			itemType = 7;
 			price = 300;
-		}
-
-		SStar(Character* player) : Item(player){
-			name = "Super Star";
-			itemType = 7;
-			price = 300;
-		}
-	
-		virtual void itemBehavior(){
-
+			desc = "+50 attack\n+5 speed";
+			effect.push_back(pair<int,int>(0, 50));
+			effect.push_back(pair<int,int>(4, 5));
 		}	
 };
 
@@ -498,16 +320,9 @@ class SerLance: public Item{
 			name = "Serpent Lance";
 			itemType = 3;
 			price = 300;
-		}
-
-		SerLance(Character* player) : Item(player){
-			name = "Serpent Lance";
-			itemType = 3;
-			price = 300;
-		}
-	
-		virtual void itemBehavior(){
-
+			desc = "+45 attack\n+10 health";
+			effect.push_back(pair<int,int>(0, 45));
+			effect.push_back(pair<int,int>(5, 10));
 		}	
 };
 
@@ -517,16 +332,9 @@ class NNun: public Item{
 			name = "Numbing Nunchucks";
 			itemType = 5;
 			price = 300;
-		}
-
-		NNun(Character* player) : Item(player){
-			name = "Numbing Nunchucks";
-			itemType = 5;
-			price = 300;
-		}
-	
-		virtual void itemBehavior(){
-
+			desc = "+50 attack\n+4 health";
+			effect.push_back(pair<int,int>(0, 50));
+			effect.push_back(pair<int,int>(5, 4));
 		}	
 };
 
@@ -536,16 +344,9 @@ class SacStaff: public Item{
 			name = "Sacred Staff";
 			itemType = 6;
 			price = 300;
-		}
-
-		SacStaff(Character* player) : Item(player){
-			name = "Sacred Staff";
-			itemType = 6;
-			price = 300;
-		}
-	
-		virtual void itemBehavior(){
-
+			desc = "+50 special attack\n+10 health";
+			effect.push_back(pair<int,int>(2, 50));
+			effect.push_back(pair<int,int>(5, 10));
 		}	
 };
 
@@ -555,17 +356,10 @@ class WDagg: public Item{
 			name = "Wolf Dagger";
 			itemType = 2;
 			price = 300;
+			desc = "+50 attack\n+5 speed";
+			effect.push_back(pair<int,int>(0, 50));
+			effect.push_back(pair<int,int>(4, 5));
 		}
-
-		WDagg(Character* player) : Item(player){
-			name = "Wolf Dagger";
-			itemType = 2;
-			price = 300;
-		}
-	
-		virtual void itemBehavior(){
-
-		}	
 };
 
 class OShield: public Item{
@@ -574,16 +368,10 @@ class OShield: public Item{
 			name = "Ordained Shield";
 			itemType = 8;
 			price = 300;
-		}
-
-		OShield(Character* player) : Item(player){
-			name = "Ordained Shield";
-			itemType = 8;
-			price = 300;
-		}
-	
-		virtual void itemBehavior(){
-
+			desc = "+50 defense\n+50 special defense\n+20 health";
+			effect.push_back(pair<int,int>(1, 50));
+			effect.push_back(pair<int,int>(3, 50));
+			effect.push_back(pair<int,int>(5, 20));
 		}	
 };
 
@@ -593,16 +381,10 @@ class HSword: public Item{
 			name = "Holy Sword";
 			itemType = 1;
 			price = 300;
-		}
-
-		HSword(Character* player) : Item(player){
-			name = "Holy Sword";
-			itemType = 1;
-			price = 300;
-		}
-	
-		virtual void itemBehavior(){
-
+			desc = "+50 attack\n+10 special defense\n+10 health";
+			effect.push_back(pair<int,int>(0, 50));
+			effect.push_back(pair<int,int>(3, 50));
+			effect.push_back(pair<int,int>(5, 10));
 		}	
 };
 
@@ -612,16 +394,10 @@ class BGaunt: public Item{
 			name = "Bear Gauntlets";
 			itemType = 4;
 			price = 300;
-		}
-
-		BGaunt(Character* player) : Item(player){
-			name = "Bear Gauntlets";
-			itemType = 4;
-			price = 300;
-		}
-	
-		virtual void itemBehavior(){
-
+			desc = "+50 attack\n+10 health\n+2 speed";
+			effect.push_back(pair<int,int>(0, 50));
+			effect.push_back(pair<int,int>(5, 10));
+			effect.push_back(pair<int,int>(3, 2));
 		}	
 };
 
@@ -631,16 +407,12 @@ class LTrinket: public Item{
 			name = "Lucky Trinket";
 			itemType = 0;
 			price = 500;
+			desc = "+50 attack\n+50 defense\n+50 special attack\n+50 special defense\n+50 speed";
+			effect.push_back(pair<int,int>(0, 50));
+			effect.push_back(pair<int,int>(1, 50));
+			effect.push_back(pair<int,int>(2, 50));
+			effect.push_back(pair<int,int>(3, 50));
+			effect.push_back(pair<int,int>(4, 50));
 		}
-
-		LTrinket(Character* player) : Item(player){
-			name = "Lucky Trinket";
-			itemType = 0;
-			price = 500;
-		}
-	
-		virtual void itemBehavior(){
-
-		}	
 };
 #endif

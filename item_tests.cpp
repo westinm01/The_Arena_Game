@@ -24,10 +24,19 @@ TEST(ItemTest, TDaggTest){
 	Character* c = new Vlad();
 	c->addItem(new TDagg());
 
-	EXPECT_EQ(c->getItem(1)->getName(), "Thief Dagger");
-	
+	EXPECT_EQ(c->getItem(1)->getName(), "Thief Dagger");	
 }
 
+TEST(ItemTest, FullTest){
+	Character* c = new Winelle();
+	c->addItem(new HSword());
+	c->addItem(new SilShield());
+	c->addItem(new NNun());
+
+	EXPECT_EQ(c->getItem(1)->getName(), "Holy Sword");
+	EXPECT_EQ(c->getItem(2)->getPrice(), 80);
+	EXPECT_EQ(c->getItem(3)->getItemType(), 5);
+}
 
 
 #endif
