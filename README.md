@@ -38,7 +38,7 @@
  ## Screenshots
  > https://drive.google.com/drive/folders/1YKXeeTi2CfFcxo8JIariBhVkjlnzBJ1J?usp=sharing
  ## Installation/Usage
- > Instructions on installing and running your application
+ > To run the game, simply use the `g++ main.cpp -std=c++11` command, and afterwards use the `./a.out` command
  ## Testing
  > Testing was conducted using the googletest submodule. We did unit testing for every individual class and a few with some of the classes combined.
  
