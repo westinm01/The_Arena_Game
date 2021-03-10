@@ -8,7 +8,6 @@
 #include "../AbilityItem/item.hpp"
 using namespace std;
 
-class Item;
 class Character{
 	string name;
 	string fightStyle;
@@ -109,14 +108,17 @@ class Character{
 	Ability* getAbility(){
 		return uniqueAbility;
 	}
-/*	Item* getItem(int num){
+	Item* getItem(int num){
 		return equippedItems.at(num - 1);
 	}
-	void showItem(int num){
-		cout << "Name: " << equippedItems.at(num - 1)->getName() << endl;
-		cout << "Price: " << equippedItems.at(num - 1)->getPrice() << endl;
+
+	void showItems(){
+		for (int i = 0; i < equippedItems.size(); i++){
+			Item* stash = equippedItems.at(i);
+			cout << i + 1 << ". " << stash->getName() << endl;
+		}
 	}
-*/
+
 	void showAbility(){
 		cout << "Name: " << uniqueAbility->getName() << endl;
 		cout << "Description: " << uniqueAbility->getDescription() << endl;

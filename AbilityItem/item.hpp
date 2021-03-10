@@ -1,12 +1,13 @@
 #ifndef __ITEM_HPP__
 #define __ITEM_HPP__
 
-#include "../PlayableCharacterCreation/character.hpp"
+//#include "../PlayableCharacterCreation/character.hpp"
 #include <iostream>
 #include <string>
 
 using namespace std;
 
+class Character;
 class Item{
 	protected:
 		std::string name;
@@ -294,6 +295,348 @@ class TDagg: public Item{
 			name = "Thief Dagger";
 			itemType = 2;
 			price = 70;
+		}
+	
+		virtual void itemBehavior(){
+
+		}	
+};
+
+class IGaunt: public Item{
+	public:
+		IGaunt():Item(){
+			name = "Ice Gauntlets";
+			itemType = 4;
+			price = 75;
+		}
+
+		IGaunt(Character* player) : Item(player){
+			name = "Ice Gauntlets";
+			itemType = 4;
+			price = 75;
+		}
+	
+		virtual void itemBehavior(){
+
+		}	
+};
+
+class TStar: public Item{
+	public:
+		TStar():Item(){
+			name = "Toxic Star";
+			itemType = 7;
+			price = 150;
+		}
+
+		TStar(Character* player) : Item(player){
+			name = "Toxic Star";
+			itemType = 7;
+			price = 150;
+		}
+	
+		virtual void itemBehavior(){
+
+		}	
+};
+
+class BLance: public Item{
+	public:
+		BLance():Item(){
+			name = "Bulky Lance";
+			itemType = 3;
+			price = 135;
+		}
+
+		BLance(Character* player) : Item(player){
+			name = "Bulky Lance";
+			itemType = 3;
+			price = 135;
+		}
+	
+		virtual void itemBehavior(){
+
+		}	
+};
+
+class FStaff: public Item{
+	public:
+		FStaff():Item(){
+			name = "Forest Staff";
+			itemType = 6;
+			price = 160;
+		}
+
+		FStaff(Character* player) : Item(player){
+			name = "Forest Staff";
+			itemType = 6;
+			price = 160;
+		}
+	
+		virtual void itemBehavior(){
+
+		}	
+};
+
+class CNun: public Item{
+	public:
+		CNun():Item(){
+			name = "Concrete Nunchucks";
+			itemType = 5;
+			price = 155;
+		}
+
+		CNun(Character* player) : Item(player){
+			name = "Concrete Nunchucks";
+			itemType = 5;
+			price = 155;
+		}
+	
+		virtual void itemBehavior(){
+
+		}	
+};
+
+class DDagg: public Item{
+	public:
+		DDagg():Item(){
+			name = "Dusk Dagger";
+			itemType = 2;
+			price = 160;
+		}
+
+		DDagg(Character* player) : Item(player){
+			name = "Dusk Dagger";
+			itemType = 2;
+			price = 160;
+		}
+	
+		virtual void itemBehavior(){
+
+		}	
+};
+
+class GShield: public Item{
+	public:
+		GShield():Item(){
+			name = "Golden Shield";
+			itemType = 8;
+			price = 170;
+		}
+
+		GShield(Character* player) : Item(player){
+			name = "Golden Shield";
+			itemType = 8;
+			price = 170;
+		}
+	
+		virtual void itemBehavior(){
+
+		}	
+};
+
+class GSword: public Item{
+	public:
+		GSword():Item(){
+			name = "Golden Sword";
+			itemType = 1;
+			price = 180;
+		}
+
+		GSword(Character* player) : Item(player){
+			name = "Golden Sword";
+			itemType = 1;
+			price = 180;
+		}
+	
+		virtual void itemBehavior(){
+
+		}	
+};
+
+class CGaunt: public Item{
+	public:
+		CGaunt():Item(){
+			name = "Cinderblock Gauntlets";
+			itemType = 4;
+			price = 150;
+		}
+
+		CGaunt(Character* player) : Item(player){
+			name = "Cinderblock Gauntlets";
+			itemType = 4;
+			price = 150;
+		}
+	
+		virtual void itemBehavior(){
+
+		}	
+};
+
+class SStar: public Item{
+	public:
+		SStar():Item(){
+			name = "Super Star";
+			itemType = 7;
+			price = 300;
+		}
+
+		SStar(Character* player) : Item(player){
+			name = "Super Star";
+			itemType = 7;
+			price = 300;
+		}
+	
+		virtual void itemBehavior(){
+
+		}	
+};
+
+class SerLance: public Item{
+	public:
+		SerLance():Item(){
+			name = "Serpent Lance";
+			itemType = 3;
+			price = 300;
+		}
+
+		SerLance(Character* player) : Item(player){
+			name = "Serpent Lance";
+			itemType = 3;
+			price = 300;
+		}
+	
+		virtual void itemBehavior(){
+
+		}	
+};
+
+class NNun: public Item{
+	public:
+		NNun():Item(){
+			name = "Numbing Nunchucks";
+			itemType = 5;
+			price = 300;
+		}
+
+		NNun(Character* player) : Item(player){
+			name = "Numbing Nunchucks";
+			itemType = 5;
+			price = 300;
+		}
+	
+		virtual void itemBehavior(){
+
+		}	
+};
+
+class SacStaff: public Item{
+	public:
+		SacStaff():Item(){
+			name = "Sacred Staff";
+			itemType = 6;
+			price = 300;
+		}
+
+		SacStaff(Character* player) : Item(player){
+			name = "Sacred Staff";
+			itemType = 6;
+			price = 300;
+		}
+	
+		virtual void itemBehavior(){
+
+		}	
+};
+
+class WDagg: public Item{
+	public:
+		WDagg():Item(){
+			name = "Wolf Dagger";
+			itemType = 2;
+			price = 300;
+		}
+
+		WDagg(Character* player) : Item(player){
+			name = "Wolf Dagger";
+			itemType = 2;
+			price = 300;
+		}
+	
+		virtual void itemBehavior(){
+
+		}	
+};
+
+class OShield: public Item{
+	public:
+		OShield():Item(){
+			name = "Ordained Shield";
+			itemType = 8;
+			price = 300;
+		}
+
+		OShield(Character* player) : Item(player){
+			name = "Ordained Shield";
+			itemType = 8;
+			price = 300;
+		}
+	
+		virtual void itemBehavior(){
+
+		}	
+};
+
+class HSword: public Item{
+	public:
+		HSword():Item(){
+			name = "Holy Sword";
+			itemType = 1;
+			price = 300;
+		}
+
+		HSword(Character* player) : Item(player){
+			name = "Holy Sword";
+			itemType = 1;
+			price = 300;
+		}
+	
+		virtual void itemBehavior(){
+
+		}	
+};
+
+class BGaunt: public Item{
+	public:
+		BGaunt():Item(){
+			name = "Bear Gauntlets";
+			itemType = 4;
+			price = 300;
+		}
+
+		BGaunt(Character* player) : Item(player){
+			name = "Bear Gauntlets";
+			itemType = 4;
+			price = 300;
+		}
+	
+		virtual void itemBehavior(){
+
+		}	
+};
+
+class LTrinket: public Item{
+	public:
+		LTrinket():Item(){
+			name = "Lucky Trinket";
+			itemType = 0;
+			price = 500;
+		}
+
+		LTrinket(Character* player) : Item(player){
+			name = "Lucky Trinket";
+			itemType = 0;
+			price = 500;
 		}
 	
 		virtual void itemBehavior(){
